@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="ChessBoard.css" />
+		<title>Chess Board</title>
+	</head>
+<body>
+	<div id="firstDiv">
+		<label for="Insert Width">Columns</label>
+		<input id="getWidth">
+		<label for="Insert Height">Rows</label>
+		<input id="getHeight"><br>
+		<button id="submit">Create Board</button>
+		<button id="reset" onclick="location.reload()">Reset</button><br><br>
+	</div>
+	<div class="container">	
+		<table id="chessboard">
+		</table>
+	</div>
+<script src="ChessBoard.js"></script>              
+</body>
+</html>
