@@ -203,3 +203,24 @@ const menu = [
             });
         });
     }
+
+    //about us section
+    const articleContainer = document.querySelector(".articles-and-buttons-container");
+    const aboutButtons = document.querySelectorAll(".tab-btn");
+    const articles = document.querySelectorAll(".article");
+    
+    articleContainer.addEventListener("click", (e) => {
+        const articleId = e.target.dataset.id;
+        if (articleId) {
+            aboutButtons.forEach((button) => {
+                button.classList.remove("active");
+                e.target.classList.add("active");
+            });
+            
+            articles.forEach((article) => {
+                article.classList.remove("active");
+                document.getElementById(articleId).classList.add("active");
+            });
+            
+        }
+    });
