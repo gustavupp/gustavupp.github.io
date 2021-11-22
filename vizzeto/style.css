@@ -46,6 +46,7 @@ section {
 /*-------BEGINS HEADER--------*/
 header {
     height: 100vh;
+    width: 100vw;
     background-image: url("./images/background_image.png");
     background-size: cover;
 }
@@ -151,20 +152,78 @@ li a {
     background-color: var(--lessDarkBlue);
     color: var(--notSoWhite);
     align-items: center;
-    height: 100vh;
     flex-direction: column;
     justify-content: flex-start;
 }
 
 .about-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    max-width: 700px;
+    max-width: 1000px;
+    color: var(--Darkblue);
+    padding: 5px;
 }
 
 span {
     color: var(--red);
 }
 
+#about-img {
+    width: 270px;
+    margin-bottom: 20px;
+    border: 4px solid var(--red);
+    border-radius: 10px;
+}
+
+.btn-container {
+    width: 99.5%;
+    padding: 0px 5px;
+}
+
+.tab-btn {
+    background-color: var(--notSoWhite);
+    border-style: none;
+    padding: 15px 20px;
+    width: 33%;
+    margin: -3px;
+    cursor: pointer;
+}
+
+.tab-btn:hover {
+    background-color: var(--white);
+}
+
+.article-container {
+    justify-content: center;
+    width: 98%;
+    padding: 0px 5px;
+}
+
+.articles-and-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px; /*this is not working fix later*/
+    margin: 40px 0px;
+    overflow: hidden;
+}
+
+.article {
+    display: none;
+    padding: 20px 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.active {
+    display: inline-block;
+    background-color: var(--white);
+}
 /*************CONTACT**************/
 
 #contact {
@@ -193,7 +252,7 @@ input, textarea{
     width: 95%;
     min-width: 50px;
     border-radius: 7px;
-    border: 1px solid var(--red);
+    border: 1px solid rgba(128, 128, 128, 0.3);
 }
 
 textarea {
@@ -201,9 +260,14 @@ textarea {
 }
 
 .maps-container {
-    border: 1px solid gray;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 10px;
     padding: 0;
     margin: 0;
+}
+
+iframe {
+    border-radius: 10px;
 }
 
 /************MENU***************/
@@ -326,7 +390,7 @@ hr {
 }
 
 /*************MEDIUM SCREEN************/
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 750px) {
     .nav-center {
         display: flex;
         background-color: transparent;
@@ -374,7 +438,7 @@ hr {
     .fixed-navbar .links-list a:hover {
         color: var(--orange);
     }
-   
+   /*******FINISH FIX NAVBAR******/
     .contact-container {
         display: flex;
         flex-direction: row-reverse;
@@ -383,6 +447,20 @@ hr {
 
     .map {
         margin-right: 60px;
+    }
+
+    .about-content {
+        flex-direction: row;
+        padding: 0px 10px;
+    }
+
+    #about-img {
+        margin-right: 15px;
+        width: 350px;
+        height: auto;
+    }
+    .article {
+        height: 250px;
     }
 }
 
