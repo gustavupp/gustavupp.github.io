@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: rgba(220, 207, 228, 0.342);
+}
+
+h1 {
+    color: rgb(26, 0, 44);
+}
+
+.section-center {
+    margin: auto;
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 700px;
+}
+
+.btn {
+    background-color: indigo;
+    border-radius: 8px;
+    padding: 5px 15px;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 10px;
+}
+
+input {
+    border-style: none;
+    border-radius: 5px;
+    height: 25px;
+    width: 50px;
+    margin-left: 5px;
+}
+
+.lorem-text {
+    margin: auto;
+    padding: 10px;
+    color: rgb(68, 65, 70);
+}
