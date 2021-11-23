@@ -1,0 +1,137 @@
+:root {
+    --DarkGray: #27353E;
+    --white: #ececec;
+    --gray: rgb(196, 194, 194);
+    --lightRed: #b4663fb7;
+  }
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--DarkGray);
+}
+
+h2, h4 {
+    color: var(--white);
+}
+
+p {
+    color: var(--gray);
+}
+
+hr {
+    border: 2px solid var(--lightRed);
+}
+
+.parent-container {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    justify-items: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.button-container {
+    margin-bottom: 40px;
+}
+
+.filter-button {
+    border-radius: 10px;
+    border: solid var(--white);
+    padding: 5px 10px;
+    margin: 7px 2px;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-button:hover {
+    background-color: var(--white);
+    border: solid var(--DarkGray);
+    color: var(--DarkGray);
+    font-weight: 600;
+}
+
+/*--------------menu item container--------------*/
+.menu-item-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+    justify-items: center;
+    max-width: 380px;
+}
+
+.thumbnails {
+    width: 22rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 4px solid var(--lightRed);
+}
+
+.item-info {
+    font-size: 16px;
+    margin: 15px 10px;
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.menu-title {
+    margin: 20px 0;
+}
+
+.item-text {
+    padding: 7px;
+    font-size: 14px;
+    text-align: justify;
+}
+/*---------------------TABLET-----------------------*/
+@media screen and (min-width: 750px){  
+    .menu-item-container {
+        grid-template-columns: 240px 450px;
+        max-width: 750px;
+    }
+
+    .item-info {
+        font-size: 16px;
+    }
+
+    .thumbnails {
+        width: 14rem;
+    }
+    .filter-button {
+        font-size: 14px;
+    }
+
+}
+
+/*--------------------BIGGER SCREEN--------------------*/
+@media screen and (min-width: 1200px){
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .thumbnails {
+        width: 12rem;
+    }
+    .menu-item-container {
+        grid-template-columns: 210px 330px;
+        max-width: 750px;
+    }
+}
