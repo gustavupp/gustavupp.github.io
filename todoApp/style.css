@@ -3,10 +3,11 @@
     margin: 0;
     padding: 0;
     font-family: monospace;
+    font-weight: 600;
 }
 
 body {
-    background-color: rgba(205, 206, 226, 0.719);
+    background-color: #0A0A23;
 }
 
 .form-container {
@@ -15,17 +16,28 @@ body {
     justify-content: center;
     align-items: center;
     margin: 50px auto;
-    background-color: white;
-    width: 95vw;
+    background-color: #1B1B32;
+    width: 98vw;
     padding: 20px 0px;
-    max-width: 500px;
+    max-width: 380px;
+    color: #F5F6F7;
+    border: 1px solid #F5F6F7;
 }
 
-#input-text { width: 200px; }
+#input-text { 
+    max-width: 400px;
+    min-width: 200px;
+    background-color: gray;
+    color: #F5F6F7;
+    border: none;
+    height: 20px;
+}
+
+::placeholder { color: #F5F6F7;}
 
 .individual-item {
     display: flex;
-    width: 250px;
+    min-width: 240px;
     margin: 10px 0px;
     justify-content: space-between;
     visibility: hidden; /*hidden by default*/
@@ -34,6 +46,7 @@ body {
 .todo-container {
     display: flex;
     flex-direction: column;
+    width: 90%;
 }
 
 .todo-form {
@@ -43,10 +56,10 @@ body {
 .clear-btn {
     visibility: hidden;
     background-color: transparent;
-    border: 3px solid tomato;
-    padding: 0 10px;
+    border: 1.5px solid #F5F6F7;
+    padding: 4px 14px;
     margin-top: 8px;
-    color: tomato;
+    color: #F5F6F7;
     font-weight: 700;
     cursor: pointer;
     align-self: center;
@@ -71,10 +84,17 @@ body {
 
 .submit-btn {
     margin-top: 7px;
+    padding: 3px 8px;
+    background-color: transparent;
+    border: 1.5px solid #F5F6F7;
+    color: #F5F6F7;
 }
 
 .icon {
     border-style: none;
     background-color: transparent;
     cursor: pointer;
+    color: #99b4c9;
+    padding: 0 3px;
+    margin: 2px 0;
 }
