@@ -6,10 +6,13 @@ const SUBMIT_BTN = document.querySelector(".submit-btn");
 const INDIVIDUAL_ITEM = document.querySelector(".individual-item");
 const TODO_ITEMS = document.querySelector(".todo-items");
 const CLEAR_BTN = document.querySelector(".clear-btn");
+const MODAL_DIV = document.querySelector(".modal-div");
+const yesBtn = document.querySelector(".yes");
+const noBtn = document.querySelector(".no");
 
 //*********EVENT LISTENERS********
 TODO_FORM.addEventListener("submit", addTodoItem);
-CLEAR_BTN.addEventListener("click", clearAll);
+CLEAR_BTN.addEventListener("click", openModal);
 window.addEventListener("DOMContentLoaded", displayCurrentList);
 
 //DEFAULT SETTINGS
@@ -106,11 +109,14 @@ function clearAll(){
     CLEAR_BTN.classList.remove("show-container");
     displayAlert(ALERT, "List Cleared!", "red");
     localStorage.removeItem("localStorageList");
+    MODAL_DIV.classList.remove("show-modal");
+    yesBtn.removeEventListener("click", openModal);
     setBackToDefault();
 }
 
 //delete item
 function deleTodoItem(e){
+    
     //grab the target button's parent parent
     const ITEM = e.currentTarget.parentElement.parentElement;
     const ITEM_ID = ITEM.dataset.id; //grab its id so we can delete it later from local storage
@@ -172,11 +178,17 @@ function displayCurrentList(){
         CLEAR_BTN.classList.add("show-container");
         return NEW_INDIVIDUAL_ITEM; 
     });
-
-
-    
 }
 
+//open modal to make sure you want to delete all items
+function openModal(){
+    MODAL_DIV.classList.add("show-modal");
+    noBtn.addEventListener("click", function(){
+        MODAL_DIV.classList.remove("show-modal");
+        return;
+    });
+    yesBtn.addEventListener("click", clearAll);
+}
 //*********LOCAL STORAGE********
 //add to local storage
 function addToLocalStorage(id, value){
@@ -216,19 +228,3 @@ function getLocalStorage(){
     //check if there are item in the local storage; if there are, fetch them; if there aren't, return an empty array.
     return localStorage.getItem("localStorageList")? JSON.parse(localStorage.getItem("localStorageList")) : [];
 }
-
-//local storage API
-//setItem
-//getItem
-//removeItem
-//save as strings
-
-/*localStorage.setItem("testKey",JSON.stringify(["item1", "item2"]));
-
-let vari = JSON.parse(localStorage.getItem("testKey"));
-
-localStorage.removeItem("testKey");
-
-console.log(vari);*/
-
-//*********SETUP ITEMS***********
