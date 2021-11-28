@@ -4,6 +4,8 @@
     padding: 0;
     font-family: monospace;
     font-weight: 600;
+    font-size: 15px;
+    color: #F5F6F7;
 }
 
 body {
@@ -20,7 +22,6 @@ body {
     width: 98vw;
     padding: 20px 0px;
     max-width: 380px;
-    color: #F5F6F7;
     border: 1px solid #F5F6F7;
 }
 
@@ -55,10 +56,14 @@ body {
 
 .clear-btn {
     visibility: hidden;
+    padding: 4px 14px;
+    margin-top: 8px;
+}
+
+.btn {
     background-color: transparent;
     border: 1.5px solid #F5F6F7;
     padding: 4px 14px;
-    margin-top: 8px;
     color: #F5F6F7;
     font-weight: 700;
     cursor: pointer;
@@ -85,16 +90,49 @@ body {
 .submit-btn {
     margin-top: 7px;
     padding: 3px 8px;
-    background-color: transparent;
-    border: 1.5px solid #F5F6F7;
-    color: #F5F6F7;
 }
 
 .icon {
+    font-size: 19px;
     border-style: none;
     background-color: transparent;
     cursor: pointer;
     color: #99b4c9;
     padding: 0 3px;
     margin: 2px 0;
+}
+
+/********************MODAL********************/
+.modal-div {
+    visibility: hidden;
+    z-index: -100;
+    width: 100%;
+    height: 150%;
+    background-color: #1B1B32;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-modal {
+    visibility: visible;
+    z-index: 100;
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    width: 95vw;
+    max-width: 450px;
+    border-style: solid;
+}
+
+.yes, .no {
+    margin: 10px;
 }
