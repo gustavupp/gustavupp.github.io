@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/9014f4e330.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Gallery</title>
+</head>
+<body>
+    <h1>Gallery Project</h1>
+    <section class="section nature">
+        <img
+         src="./images/nature1.jpeg" 
+         title="Beach" 
+         class="img"
+         data-id="1" 
+         alt="nature" 
+        />
+        <img
+         src="./images/nature2.jpeg" 
+         title="Mountain" 
+         data-id="2" 
+         class="img"
+         alt="nature" 
+        />
+        <img
+         src="./images/nature3.jpeg" 
+         title="Forest" 
+         data-id="3" 
+         class="img"
+         alt="nature" 
+        />
+    </section>
+
+    <section class="section city">
+        <img
+         src="./images/city1.jpeg" 
+         title="New York" 
+         data-id="1"
+         class="img" 
+         alt="city" 
+        />
+        <img
+         src="./images/city2.jpeg" 
+         title="London" 
+         data-id="2" 
+         class="img"
+         alt="city" 
+        />
+        <img
+         src="./images/city3.jpeg" 
+         title="Sao Paulo" 
+         data-id="3" 
+         class="img"
+         alt="city" 
+        />
+    </section>
+
+    <div class="modal">
+        <div class="button close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="modal-content">
+            <button class="prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <img src="./images/nature1.jpeg" class="main-img" alt="nature" />
+            <h5 class="image-name"></h5>
+            <div class="modal-images">
+                <!--CONTENT ADDED DYNAMICALLY-->
+            </div>
+        </div>
+    </div>
+<script src="./app.js"></script>    
+</body>
+</html>
