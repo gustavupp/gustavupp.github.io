@@ -1,4 +1,132 @@
-//function to grab DOM elements
+//function to grab items from the DOM
+function getDomElement(selection){
+    const ELEMENT = document.querySelector(selection);
+    if (ELEMENT){
+        return ELEMENT;
+    } else {
+        throw new Error(`Check "${selection}". No such element exists`);
+    }
+}
+
+
+/***********************CREATE CONSTRUCTOR FUNCTION******************************/
+//Constructor function
+function Gallery(element){
+    //grab elements from section
+    this.section = element;
+    this.images = [...element.querySelectorAll(".img")];
+    
+    //attach event listener to the section
+    this.section.addEventListener("click", function(e){
+        if (e.target.classList.contains("img")) {
+            this.openModal(e.target);
+        } 
+    }.bind(this));
+
+    //grab elements from modal
+    this.modal = getDomElement(".modal");
+    this.modalMainImg = getDomElement(".main-img");
+    this.modalImagesContainer = getDomElement(".modal-images");
+    this.imageTitle = getDomElement(".image-name");
+    this.closeModalbtn = getDomElement(".close-btn");
+    this.prevImgBtn = getDomElement(".prev-btn");
+    this.nextImgBtn = getDomElement(".next-btn");
+
+    //bind functions to the object constructor
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.chooseThumbnail = this.chooseThumbnail.bind(this);
+    this.goToPrevImage = this.goToPrevImage.bind(this);
+    this.goToNextImage = this.goToNextImage.bind(this);
+}
+
+/******************************FUNCTIONS******************************/
+//create functions and add to the constructor's protoype
+Gallery.prototype.openModal =  function(targetElement){
+    this.setModalMainImage(targetElement);
+    this.modalImagesContainer.innerHTML = this.images.map(function(item){
+        return `<img
+                src="${item.src}" 
+                title="${item.title}" 
+                data-id="${item.dataset.id}"
+                class="${item.dataset.id === targetElement.dataset.id? "modal-img selected": "modal-img"}" 
+                alt="${item.alt}" 
+                />`; 
+    }).join("");
+    this.modal.classList.add("open");
+
+    //once modal is open, add event listeners to all buttons and thumbnails
+    this.modalImagesContainer.addEventListener("click", this.chooseThumbnail);
+    this.closeModalbtn.addEventListener("click", this.closeModal);
+    this.prevImgBtn.addEventListener("click", this.goToPrevImage);
+    this.nextImgBtn.addEventListener("click", this.goToNextImage);
+};
+
+//close modal function
+Gallery.prototype.closeModal = function(){
+    this.modal.classList.remove("open");
+    this.modalImagesContainer.removeEventListener("click", this.chooseThumbnail);
+    this.closeModalbtn.removeEventListener("click", this.closeModal);
+    this.prevImgBtn.removeEventListener("click", this.goToPrevImage);
+    this.nextImgBtn.removeEventListener("click", this.goToNextImage);
+};
+
+//set modal main image function
+Gallery.prototype.setModalMainImage = function(targetElement){
+    this.modalMainImg.src = targetElement.src;
+    this.imageTitle.textContent = targetElement.title;
+};
+
+//choose modal thumbnail
+Gallery.prototype.chooseThumbnail = function(e){
+    if (e.target.classList.contains("modal-img")) {
+        this.setModalMainImage(e.target);
+        const selected = this.modalImagesContainer.querySelector(".selected");
+        selected.classList.remove("selected");
+        e.target.classList.add("selected");
+    }                          
+};
+
+//go to previous image function
+Gallery.prototype.goToPrevImage = function(){
+    const selectedImage = this.modalImagesContainer.querySelector(".selected");
+    const previousImage = selectedImage.previousElementSibling || this.modalImagesContainer.lastElementChild;
+    this.setModalMainImage(previousImage);
+    selectedImage.classList.remove("selected");
+    previousImage.classList.add("selected");
+};
+
+//go to next image function
+Gallery.prototype.goToNextImage = function(){
+    const selectedImage = this.modalImagesContainer.querySelector(".selected");
+    const nextImage = selectedImage.nextElementSibling || this.modalImagesContainer.firstElementChild;
+    this.setModalMainImage(nextImage);
+    selectedImage.classList.remove("selected");
+    nextImage.classList.add("selected");
+}
+
+/****************************CREATE INSTANCES******************************/
+//create object instances
+const natureGallery = new Gallery(getDomElement(".nature"));
+const cityGallery = new Gallery(getDomElement(".city"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*//function to grab DOM elements
 function getElement(selection){
     const element = document.querySelector(selection);
     if (element){
@@ -96,5 +224,5 @@ Gallery.prototype.nextImg = function(){
 };
 
 const nature = new Gallery(getElement(".nature"));
-const city = new Gallery(getElement(".city"));
+const city = new Gallery(getElement(".city"));*/
 
