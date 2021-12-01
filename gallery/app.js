@@ -40,7 +40,7 @@ function Gallery(element){
     this.goToNextImage = this.goToNextImage.bind(this);
 }
 
-/******************************FUNCTIONS******************************/
+/******************************FUNCTIONS DECLARATION******************************/
 //create functions and add to the constructor's protoype
 Gallery.prototype.openModal =  function(targetElement){
     this.setModalMainImage(targetElement);
