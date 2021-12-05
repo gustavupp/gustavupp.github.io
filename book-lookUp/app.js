@@ -1,3 +1,6 @@
+//import modules
+import displayBookSearch from "./utils/displayBookSearch.js";
+
 //grab DOM elements
 const cardContainer = document.querySelector(".card-container");
 const bookImg = document.querySelector(".img"); 
@@ -13,7 +16,9 @@ btn.addEventListener("click",(e)=> {
     const inputValue = searchInput.value.replace(" ", "+");
     const searchUrl = `https://www.googleapis.com/books/v1/volumes?q=${inputValue}&maxResults=40`;
     getData(searchUrl)
-    .then(response => displayData(response))
+    .then(response => {
+        cardContainer.innerHTML = displayBookSearch(response);
+    })
     .catch(err => console.log(err));
 });
     
@@ -36,23 +41,7 @@ function getData(url){
     });
 }
 
-//display data function
-function displayData(data){
-    const searchData = JSON.parse(data);
-    const searchData1 = searchData.items
-    
-    const result = searchData1.map((item)=>{
-        return `<div class="card">
-        <img src="${(item.volumeInfo.imageLinks)? item.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/120x150/000/fff.png&text=No+Cover!"}" alt="image" class="book-cover" style="max-width: 150px;">
-        <div class="book-info">
-            <p class="title">${item.volumeInfo.title}</p>
-        </div>
-        </div>`;
-    }).join("");
-    console.log(searchData1)
-    cardContainer.innerHTML = result;
 
-}
 
     /*
     function handleResponse(response) {
