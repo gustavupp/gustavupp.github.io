@@ -5,13 +5,13 @@ const bookTitle = document.querySelector(".title");
 const author = document.querySelector(".author"); 
 const bookDescription = document.querySelector(".description"); 
 const searchInput = document.querySelector("input");
-const btn = document.querySelector(".btn");
+const btn = document.querySelector(".search-btn");
 const url = "https://www.googleapis.com/books/v1/volumes?q=";
 
 btn.addEventListener("click",(e)=> {
     e.preventDefault();
     const inputValue = searchInput.value.replace(" ", "+");
-    const searchUrl = `https://www.googleapis.com/books/v1/volumes?q=${inputValue}`;
+    const searchUrl = `https://www.googleapis.com/books/v1/volumes?q=${inputValue}&maxResults=40`;
     getData(searchUrl)
     .then(response => displayData(response))
     .catch(err => console.log(err));
@@ -40,15 +40,12 @@ function getData(url){
 function displayData(data){
     const searchData = JSON.parse(data);
     const searchData1 = searchData.items
-
+    
     const result = searchData1.map((item)=>{
         return `<div class="card">
-        <img src="${(item.volumeInfo.imageLinks)? item.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/120x150/000/fff.png&text=No+Image!"}" alt="image" class="img" style="max-width: 150px;">
+        <img src="${(item.volumeInfo.imageLinks)? item.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/120x150/000/fff.png&text=No+Cover!"}" alt="image" class="book-cover" style="max-width: 150px;">
         <div class="book-info">
-            <h3 class="title">${item.volumeInfo.title}</h3>
-            <p class="author">${item.volumeInfo.authors}</p>
-            <p class="description">${item.searchInfo.textSnippet}</p>
-            <button class="read-more">Read More</button>
+            <p class="title">${item.volumeInfo.title}</p>
         </div>
         </div>`;
     }).join("");

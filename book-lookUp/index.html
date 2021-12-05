@@ -14,14 +14,23 @@
 <body>
     <br>
     <form action="submit">
-      <input type="text">
-      <button class="btn">Search</button>
+        <input class="search" type="text" placeholder="Search by title or author">
+        <button class="search-btn">
+            <i class="fas fa-search"></i>
+        </button>
     </form>
     <br>
     <div class="card-container">
         <!--data dynamically inserted-->
     </div>
-    
+    <nav class="navbar">
+        <button class="my-shelf-btn">
+            <i class="fas fa-book"></i>
+        </button>
+        <button class="my-shelf-btn">
+            <i class="far fa-bookmark"></i>
+        </button>
+    </nav>
 
     <script src="app.js"></script>
   </body>
