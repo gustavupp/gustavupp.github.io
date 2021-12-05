@@ -1,6 +1,7 @@
 /*********COLORS***********/
 :root {
     --background-color: rgb(27, 27, 27);
+    --secondary-color: rgb(44, 44, 44);
     --font-color: #F5F6F7;
   }
 
@@ -19,6 +20,17 @@ body {
 }
 
 /****************SEARCH BAR**************************/
+
+.search-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    height: 40px;
+    width: 100%;
+    background-color: var(--background-color);
+}
 
 input.search {
     border-style: none;
@@ -78,4 +90,21 @@ p.title {
 
 .book-info {
     padding: 2px;
+}
+/*********************NAVBAR*********************/
+.navbar {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+
+.my-shelf-btn {
+    color:var(--font-color);
+    background-color: transparent;
+    border-style: none;
+    font-size: 20px;
+    padding: 2px 6px;
+    color: rgb(139, 139, 139);
 }
