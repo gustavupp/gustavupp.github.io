@@ -4,7 +4,7 @@ function displayBookSearch(data){
         
     const result = searchData1.map((item)=>{
         return `<div class="card">
-        <img src="${(item.volumeInfo.imageLinks)? item.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/120x150/000/fff.png&text=No+Cover!"}" alt="image" class="book-cover" style="max-width: 150px;">
+        <a href="#"><img src="${(item.volumeInfo.imageLinks)? item.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/120x150/000/fff.png&text=No+Cover!"}" alt="image" class="book-cover" style="max-width: 150px;" /></a>
         <div class="book-info">
             <p class="title">${item.volumeInfo.title.length > 12? item.volumeInfo.title.slice(0, 12) + "..." : item.volumeInfo.title.length}</p>
         </div>

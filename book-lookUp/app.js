@@ -1,14 +1,16 @@
 //import modules
+import get from "./utils/getElement.js";
+import getData from "./utils/getData.js";
 import displayBookSearch from "./utils/displayBookSearch.js";
 
 //grab DOM elements
-const cardContainer = document.querySelector(".card-container");
-const bookImg = document.querySelector(".img"); 
-const bookTitle = document.querySelector(".title"); 
-const author = document.querySelector(".author"); 
-const bookDescription = document.querySelector(".description"); 
-const searchInput = document.querySelector("input");
-const btn = document.querySelector(".search-btn");
+const cardContainer = get(".card-container");
+//const bookImg = get(".book-cover"); 
+//const bookTitle = get(".title"); 
+//const author = get(".author"); 
+//const bookDescription = get(".description"); 
+const searchInput = get("input");
+const btn = get(".search-btn");
 const url = "https://www.googleapis.com/books/v1/volumes?q=";
 
 btn.addEventListener("click",(e)=> {
@@ -22,24 +24,7 @@ btn.addEventListener("click",(e)=> {
     .catch(err => console.log(err));
 });
     
-function getData(url){
-    return new Promise((resolve, reject)=>{
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-        xhr.send();
-        xhr.onreadystatechange = function(){
-            if(xhr.readyState !== 4) return;
-            if (xhr.status === 200){
-                resolve(xhr.responseText);
-            } else {
-                reject({ 
-                    status: xhr.status,
-                    text: xhr.statusText, 
-                });
-            }
-        }
-    });
-}
+
 
 
 
