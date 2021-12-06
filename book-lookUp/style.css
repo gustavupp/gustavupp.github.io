@@ -130,6 +130,8 @@ p.title {
 
 .top-section img {
     margin: 10px;
+    width: 70px;
+    height: 100px;
 }
 
 .book-info {

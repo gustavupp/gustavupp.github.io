@@ -2,7 +2,6 @@
 import get from "./utils/getElement.js";
 import getData from "./utils/getData.js";
 import displayBookSearch from "./utils/displayBookSearch.js";
-import destructureData from "./utils/destructureData.js";
 import showModal from "./utils/showModal.js";
 
 //grab DOM elements
@@ -24,7 +23,6 @@ btn.addEventListener("click",(e)=> {
         cardContainer.innerHTML = displayBookSearch(response);
         responseObject = JSON.parse(response);
         responseObject = responseObject.items;
-        destructureData(response);
     })
     .catch(err => console.log(err));
 });
