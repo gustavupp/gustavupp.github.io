@@ -2,18 +2,18 @@
 import get from "./utils/getElement.js";
 import getData from "./utils/getData.js";
 import displayBookSearch from "./utils/displayBookSearch.js";
+import destructureData from "./utils/destructureData.js";
+import showModal from "./utils/showModal.js";
 
 //grab DOM elements
 const cardContainer = get(".card-container");
-//const bookImg = get(".book-cover"); 
-//const bookTitle = get(".title"); 
-//const author = get(".author"); 
-//const bookDescription = get(".description"); 
 const searchInput = get("input");
 const btn = get(".search-btn");
 const url = "https://www.googleapis.com/books/v1/volumes?q=";
 const bookModal = get(".book-modal");
-const modalBackBtn = get(".back-btn");
+
+//global variables
+let responseObject = [];
 
 btn.addEventListener("click",(e)=> {
     e.preventDefault();
@@ -22,14 +22,21 @@ btn.addEventListener("click",(e)=> {
     getData(searchUrl)
     .then(response => {
         cardContainer.innerHTML = displayBookSearch(response);
+        responseObject = JSON.parse(response);
+        responseObject = responseObject.items;
+        destructureData(response);
     })
     .catch(err => console.log(err));
 });
     
+
 //open modal when click one of the book thumbnails
 cardContainer.addEventListener("click", (e)=> {
-    console.log(e.target)
     if (e.target.classList.contains("book-cover")) {
+        showModal(e.target.dataset.id, responseObject);
+        console.log(showModal(e.target.dataset.id, responseObject));
+        bookModal.innerHTML = showModal(e.target.dataset.id, responseObject);
+        const modalBackBtn = get(".back-btn");
         bookModal.classList.add("show-modal");
         modalBackBtn.addEventListener("click", ()=> {
         bookModal.classList.remove("show-modal");

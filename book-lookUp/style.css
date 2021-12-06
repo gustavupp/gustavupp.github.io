@@ -164,7 +164,7 @@ p.title {
     position: fixed;
     z-index: 100;
     bottom: 0;
-    height: 50px;
+    height: 40px;
     width: 100%;
     background-color: var(--secondary-color);
 }
