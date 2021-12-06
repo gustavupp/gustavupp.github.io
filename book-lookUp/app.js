@@ -13,6 +13,7 @@ const searchInput = get("input");
 const btn = get(".search-btn");
 const url = "https://www.googleapis.com/books/v1/volumes?q=";
 const bookModal = get(".book-modal");
+const modalBackBtn = get(".back-btn");
 
 btn.addEventListener("click",(e)=> {
     e.preventDefault();
@@ -27,8 +28,14 @@ btn.addEventListener("click",(e)=> {
     
 //open modal when click one of the book thumbnails
 cardContainer.addEventListener("click", (e)=> {
-    console.log(e.target.parentElement.parentElement)
-    bookModal.classList.add("show-modal");
+    console.log(e.target)
+    if (e.target.classList.contains("book-cover")) {
+        bookModal.classList.add("show-modal");
+        modalBackBtn.addEventListener("click", ()=> {
+        bookModal.classList.remove("show-modal");
+        });
+    }
+    
 });
 
 
