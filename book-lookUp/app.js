@@ -12,6 +12,7 @@ const cardContainer = get(".card-container");
 const searchInput = get("input");
 const btn = get(".search-btn");
 const url = "https://www.googleapis.com/books/v1/volumes?q=";
+const bookModal = get(".book-modal");
 
 btn.addEventListener("click",(e)=> {
     e.preventDefault();
@@ -24,7 +25,11 @@ btn.addEventListener("click",(e)=> {
     .catch(err => console.log(err));
 });
     
-
+//open modal when click one of the book thumbnails
+cardContainer.addEventListener("click", (e)=> {
+    console.log(e.target.parentElement.parentElement)
+    bookModal.classList.add("show-modal");
+});
 
 
 
