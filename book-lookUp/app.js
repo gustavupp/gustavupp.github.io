@@ -5,6 +5,7 @@ import displayBookSearch from "./utils/displayBookSearch.js";
 import showModal from "./utils/showModal.js";
 import addToLocalStorage from "./utils/addToLocalStorage.js";
 import getLocalStorage from "./utils/getLocalStorage.js";
+import displayBookShelf from "./utils/displayBookShelf.js";
 
 //grab DOM elements
 const cardContainer = get(".card-container");
@@ -16,6 +17,10 @@ const bookModal = get(".book-modal");
 //global variables
 let responseObject = [];
 
+//when the DOM loads, display booklist on local storage
+window.addEventListener("DOMContentLoaded", displayBookShelf);
+
+//add event listener to the search button
 btn.addEventListener("click",(e)=> {
     e.preventDefault();
     const inputValue = searchInput.value.replace(" ", "+");
@@ -37,8 +42,8 @@ cardContainer.addEventListener("click", (e)=> {
         showModal(e.target.dataset.id, responseObject);
         
         //I found a way to return multiple values from the function, as I wanted the destructured object
-        let arrayResult = showModal(e.target.dataset.id, responseObject); //assign the values of the return to a variable than as the variable becomes an object you can use dot notation to get specific values.
-        bookModal.innerHTML = arrayResult.newData;
+        let currentBookData = showModal(e.target.dataset.id, responseObject); //assign the values of the return to a variable than as the variable becomes an object you can use dot notation to get specific values.
+        bookModal.innerHTML = currentBookData.newData;
 
         //grab modal buttons after they have been added to the DOM
         const modalBackBtn = get(".back-btn");
@@ -46,11 +51,13 @@ cardContainer.addEventListener("click", (e)=> {
 
         //add event listener to them
         bookModal.classList.add("show-modal");
+
+        //start listening for clicks on both buttons
         modalBackBtn.addEventListener("click", ()=> {
         bookModal.classList.remove("show-modal");
         });
         favoriteBtn.addEventListener("click", ()=>{
-            addToLocalStorage(arrayResult);
+            addToLocalStorage(currentBookData);
         });
     }
     
