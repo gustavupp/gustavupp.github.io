@@ -172,7 +172,7 @@ p.title {
     background-color: var(--secondary-color);
 }
 
-.my-shelf-btn {
+.my-shelf-btn, .search-section-btn {
     color:var(--font-color);
     background-color: transparent;
     border-style: none;

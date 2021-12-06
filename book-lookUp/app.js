@@ -3,6 +3,8 @@ import get from "./utils/getElement.js";
 import getData from "./utils/getData.js";
 import displayBookSearch from "./utils/displayBookSearch.js";
 import showModal from "./utils/showModal.js";
+import addToLocalStorage from "./utils/addToLocalStorage.js";
+import getLocalStorage from "./utils/getLocalStorage.js";
 
 //grab DOM elements
 const cardContainer = get(".card-container");
@@ -37,7 +39,6 @@ cardContainer.addEventListener("click", (e)=> {
         //I found a way to return multiple values from the function, as I wanted the destructured object
         let arrayResult = showModal(e.target.dataset.id, responseObject); //assign the values of the return to a variable than as the variable becomes an object you can use dot notation to get specific values.
         bookModal.innerHTML = arrayResult.newData;
-        console.log(arrayResult)
 
         //grab modal buttons after they have been added to the DOM
         const modalBackBtn = get(".back-btn");
@@ -48,8 +49,8 @@ cardContainer.addEventListener("click", (e)=> {
         modalBackBtn.addEventListener("click", ()=> {
         bookModal.classList.remove("show-modal");
         });
-        favoriteBtn.addEventListener("click", (e)=>{
-            console.log(e.currentTarget.parentElement.parentElement.firstChild)
+        favoriteBtn.addEventListener("click", ()=>{
+            addToLocalStorage(arrayResult);
         });
     }
     

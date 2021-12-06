@@ -35,6 +35,8 @@ function showModal(elementId, object){
                     <p>${title}</p><br>
                     <h4>SUBTITLE</h4>
                     <p>${subtitle? subtitle: "This book has no subtitle"}</p><br>
+                    <h4>AUTHORS</h4>
+                    <p>${authors}</p><br>
                     <h4 class="description-title">DESCRIPTION</h4>
                     <p class="description-content">${description}</p><br>
                     <h4>CATEGORIES</h4>
