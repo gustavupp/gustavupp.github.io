@@ -5,7 +5,9 @@ const content = document.querySelector(".content");
 const image = document.querySelector(".img");
 
 btn.addEventListener("click", () => {
-    fetch(URL).then(data);
+    fetch(URL)
+    .then(displayData(data))
+    .catch(err => console.log(err));
 });
 
 function getData(url){

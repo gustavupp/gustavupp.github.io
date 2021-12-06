@@ -31,13 +31,25 @@ btn.addEventListener("click",(e)=> {
 //open modal when click one of the book thumbnails
 cardContainer.addEventListener("click", (e)=> {
     if (e.target.classList.contains("book-cover")) {
+        //call showModal and pass the id of the target and the parsed object from the api
         showModal(e.target.dataset.id, responseObject);
-        console.log(showModal(e.target.dataset.id, responseObject));
-        bookModal.innerHTML = showModal(e.target.dataset.id, responseObject);
+        
+        //I found a way to return multiple values from the function, as I wanted the destructured object
+        let arrayResult = showModal(e.target.dataset.id, responseObject); //assign the values of the return to a variable than as the variable becomes an object you can use dot notation to get specific values.
+        bookModal.innerHTML = arrayResult.newData;
+        console.log(arrayResult)
+
+        //grab modal buttons after they have been added to the DOM
         const modalBackBtn = get(".back-btn");
+        const favoriteBtn = get(".favorite-btn");
+
+        //add event listener to them
         bookModal.classList.add("show-modal");
         modalBackBtn.addEventListener("click", ()=> {
         bookModal.classList.remove("show-modal");
+        });
+        favoriteBtn.addEventListener("click", (e)=>{
+            console.log(e.currentTarget.parentElement.parentElement.firstChild)
         });
     }
     

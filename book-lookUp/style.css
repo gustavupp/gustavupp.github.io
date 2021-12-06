@@ -58,7 +58,7 @@ input.search {
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: 45px;
+    margin-top: 55px;
     place-items: center;
 }
 
@@ -103,6 +103,7 @@ p.title {
 /******************MODAL CONTAINER****************************/
 .book-modal {
     position: fixed;
+    display: flex;
     top: 0;
     left: 0;
     z-index: -1;
@@ -140,9 +141,9 @@ p.title {
 
 .middle-section {
     margin-top: 120px;
-    height: 67vh;
+    margin-bottom: 40px;
     padding: 10px;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 .bottom-section {
