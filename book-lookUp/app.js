@@ -67,6 +67,8 @@ cardContainer.addEventListener("click", (e)=> {
         //grab modal buttons after they have been added to the DOM
         const modalBackBtn = get(".back-btn");
         const favoriteBtn = get(".favorite-btn");
+        const bookmarked = get(".bookmarked")
+        const notBookmarked = get(".not-bookmarked");
 
         //open modal
         bookModal.classList.add("show-modal");
@@ -76,7 +78,10 @@ cardContainer.addEventListener("click", (e)=> {
         bookModal.classList.remove("show-modal");
         });
         favoriteBtn.addEventListener("click", ()=>{
+
             addToLocalStorage(currentBookData);
+            bookmarked.classList.add("show-btn");
+            notBookmarked.classList.remove("show-btn");
         });
     }
     

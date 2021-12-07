@@ -10,7 +10,6 @@ function showBookDetails(targetElementID){
             return item;
         }
     });
-    console.log(findMatch.id)
 
     let formattedBookData = (() => {
             return `<div class="top-section">
@@ -45,7 +44,12 @@ function showBookDetails(targetElementID){
                         <i class="fas fa-arrow-left"></i>
                     </buttom>
                     <buttom class="favorite-btn">
-                        <i class="far fa-bookmark"></i>
+                        <span class="not-bookmarked">
+                            <i class="far fa-bookmark"></i>
+                        </span>
+                        <span class="bookmarked show-btn">
+                            <i class="fas fa-bookmark"></i>
+                        </span>
                     </buttom>
                 </div>`;
     });

@@ -185,6 +185,21 @@ p.title {
     padding: 3px 10px;
     font-size: var(--buttons-size);
 }
+.show-btn {
+    display: block;
+}
+
+.bookmarked, .not-bookmarked {
+    display: none;
+}
+
+.show-btn.bookmarked {
+    display: block;
+}
+
+.show-btn.not-bookmarked {
+    display: block;
+}
 /*********************BOTTOM NAVBAR*********************/
 .navbar {
     position: fixed;
@@ -203,5 +218,5 @@ p.title {
     padding: 2px 6px;
     color: var(--tertiary-color);
     cursor: pointer;
-    font-size: 26px;
+    font-size: 24px;
 }

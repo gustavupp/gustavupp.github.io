@@ -54,8 +54,13 @@ function showModal(elementId, object){
                     <buttom class="back-btn">
                         <i class="fas fa-arrow-left"></i>
                     </buttom>
-                    <buttom class="favorite-btn">
-                        <i class="far fa-bookmark"></i>
+                    <buttom class="favorite-btn">  
+                        <span class="not-bookmarked show-btn">
+                            <i class="far fa-bookmark"></i>
+                        </span>
+                        <span class="bookmarked">
+                            <i class="fas fa-bookmark"></i>
+                        </span>
                     </buttom>
                 </div>`;
     }
