@@ -4,6 +4,8 @@
     --secondary-color: rgb(44, 44, 44);
     --tertiary-color: rgb(139, 139, 139);
     --font-color: #F5F6F7;
+    --bottom-navbar-height: 60px;
+    --buttons-size: 20px;
   }
 
 * {
@@ -53,7 +55,7 @@ input.search {
     border-style: none;
     color: var(--font-color);
     cursor: pointer;
-    font-size: 20px;
+    font-size: var(--buttons-size);
 }
 /******************BOOKS CONTAINER****************************/
 .card-container {
@@ -160,7 +162,7 @@ p.title {
 
 .middle-section {
     margin-top: 140px; /*same as top section height*/
-    margin-bottom: 60px; /*same as bottom section height*/
+    margin-bottom: var(--bottom-navbar-height); /*same as bottom section height*/
     padding: 10px;
     overflow-y: auto;
     background-color: var(--background-color);
@@ -171,7 +173,7 @@ p.title {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: var(--bottom-navbar-height);
     display: flex;
     justify-content:space-evenly;
     align-items:center;
@@ -181,14 +183,16 @@ p.title {
 .back-btn, .favorite-btn {
     cursor: pointer;
     padding: 3px 10px;
-    font-size: 20px;
+    font-size: var(--buttons-size);
 }
 /*********************BOTTOM NAVBAR*********************/
 .navbar {
     position: fixed;
+    display: flex;
+    justify-content: space-evenly;
     z-index: 102;
     bottom: 0;
-    height: 40px;
+    height: var(--bottom-navbar-height);
     width: 100%;
     background-color: var(--secondary-color);
 }
@@ -196,8 +200,8 @@ p.title {
 .my-shelf-btn, .search-section-btn {
     background-color: transparent;
     border-style: none;
-    font-size: 20px;
     padding: 2px 6px;
     color: var(--tertiary-color);
     cursor: pointer;
+    font-size: 26px;
 }
