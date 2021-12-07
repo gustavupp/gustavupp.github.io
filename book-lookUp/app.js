@@ -6,19 +6,19 @@ import showModal from "./utils/showModal.js";
 import addToLocalStorage from "./utils/addToLocalStorage.js";
 import getLocalStorage from "./utils/getLocalStorage.js";
 import displayBookShelf from "./utils/displayBookShelf.js";
+import showBookDetails from "./showBookDetails.js";
 
 //grab DOM elements
 const cardContainer = get(".card-container");
 const searchInput = get("input");
 const btn = get(".search-btn");
-const url = "https://www.googleapis.com/books/v1/volumes?q=";
 const bookModal = get(".book-modal");
 const myShelfBtn = get(".my-shelf-btn");
 const searchBooksBtn = get(".search-section-btn");
 const searchContainer = get(".search-container");
 const myShelf = get(".my-shelf");
 
-//global variables
+//global variable to store the json data from the api, so I can access it from any part of the code
 let responseObject = [];
 
 //when the DOM loads, display booklist on local storage
@@ -35,9 +35,11 @@ myShelfBtn.addEventListener("click", ()=>{
 searchBooksBtn.addEventListener("click", ()=> {
     searchContainer.style.visibility ="visible";
     myShelf.style.display = "none";
+    cardContainer.style.display = "grid";
 });
 
-//add event listener to the search button
+
+//add event listener for the search button
 btn.addEventListener("click",(e)=> {
     e.preventDefault();
     const inputValue = searchInput.value.replace(" ", "+");
@@ -52,7 +54,7 @@ btn.addEventListener("click",(e)=> {
 });
     
 
-//open modal when click one of the book thumbnails
+//open modal when one of the book thumbnails are clicked
 cardContainer.addEventListener("click", (e)=> {
     if (e.target.classList.contains("book-cover")) {
         //call showModal and pass the id of the target and the parsed object from the api
@@ -66,7 +68,7 @@ cardContainer.addEventListener("click", (e)=> {
         const modalBackBtn = get(".back-btn");
         const favoriteBtn = get(".favorite-btn");
 
-        //add event listener to them
+        //open modal
         bookModal.classList.add("show-modal");
 
         //start listening for clicks on both buttons
@@ -80,14 +82,10 @@ cardContainer.addEventListener("click", (e)=> {
     
 });
 
-
-
-    /*
-    function handleResponse(response) {
-      for (var i = 0; i < response.items.length; i++) {
-        var item = response.items[i];
-        content.innerHTML += `<br><img src="${(item.volumeInfo.imageLinks) ? img.src= item.volumeInfo.imageLinks.thumbnail : img.alt = "NO IMG :("}" alt="${item.volumeInfo.title}" class="img" style="max-width: 150px;">
-        <h3>${item.volumeInfo.title}</h3>` ;
-      }
+//open modal when one of the thumbnail on the bookshelf are clicked
+myShelf.addEventListener("click", (e)=> {
+    if (e.target.classList.contains("book-cover")) {
+      //showBookDetails(e);
+      myShelf.innerHTML = showBookDetails(e.target.dataset.id);
     }
-    */
+});
