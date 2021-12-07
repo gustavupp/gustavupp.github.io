@@ -36,10 +36,12 @@ body {
 }
 
 input.search {
+    text-align: left;
     border-style: none;
+    padding-left: 10px;
     border-radius: 3px;
-    height: 25px;
-    width: 230px;
+    height: 30px;
+    width: 280px;
     background-color: rgb(49, 49, 49);
     color: var(--font-color);
 }
@@ -51,6 +53,7 @@ input.search {
     border-style: none;
     color: var(--font-color);
     cursor: pointer;
+    font-size: 20px;
 }
 /******************BOOKS CONTAINER****************************/
 .card-container {
@@ -60,7 +63,7 @@ input.search {
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: 55px;
+    margin-top: 55px; /*height of fixed search bar*/
     place-items: center;
 }
 
@@ -81,8 +84,8 @@ input.search {
 }
 
 .book-cover {
-    width: 60px;
-    height: 90px;
+    width: 90px;
+    height: 120px;
     cursor: pointer;
 }
 
@@ -139,7 +142,7 @@ p.title {
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 140px;
     display: flex;
     align-items:center;
     background-color: var(--secondary-color);
@@ -147,8 +150,8 @@ p.title {
 
 .top-section img {
     margin: 10px;
-    width: 70px;
-    height: 100px;
+    width: 90px;
+    height: 120px;
 }
 
 .book-info {
@@ -156,11 +159,11 @@ p.title {
 }
 
 .middle-section {
-    margin-top: 120px;
-    margin-bottom: 40px;
+    margin-top: 140px; /*same as top section height*/
+    margin-bottom: 60px; /*same as bottom section height*/
     padding: 10px;
     overflow-y: auto;
-    background-color: yellowgreen;
+    background-color: var(--background-color);
 }
 
 .bottom-section {
@@ -168,7 +171,7 @@ p.title {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 40px;
+    height: 60px;
     display: flex;
     justify-content:space-evenly;
     align-items:center;
@@ -178,6 +181,7 @@ p.title {
 .back-btn, .favorite-btn {
     cursor: pointer;
     padding: 3px 10px;
+    font-size: 20px;
 }
 /*********************BOTTOM NAVBAR*********************/
 .navbar {
