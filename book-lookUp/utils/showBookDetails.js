@@ -1,5 +1,4 @@
-import displayBookShelf from "./utils/displayBookShelf.js";
-import getLocalStorage from "./utils/getLocalStorage.js";
+import getLocalStorage from "./getLocalStorage.js";
 
 function showBookDetails(targetElementID){
     
@@ -13,7 +12,7 @@ function showBookDetails(targetElementID){
 
     let formattedBookData = (() => {
             return `<div class="top-section">
-                    <img src="${findMatch.thumbnail}" alt="book cover" />
+                    <img src="${findMatch.thumbnail}" data-id="${findMatch.id}" alt="book cover" />
                     <div class="book-info">
                         <h4>${findMatch.title.length > 50? findMatch.title.slice(0, 50) + "...": findMatch.title}</h4>
                         <p>${findMatch.authors > 20? findMatch.authors.slice(0, 20) + "...": findMatch.authors}</p>

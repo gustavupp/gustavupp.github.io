@@ -4,9 +4,9 @@ import getData from "./utils/getData.js";
 import displayBookSearch from "./utils/displayBookSearch.js";
 import showModal from "./utils/showModal.js";
 import addToLocalStorage from "./utils/addToLocalStorage.js";
-import getLocalStorage from "./utils/getLocalStorage.js";
 import displayBookShelf from "./utils/displayBookShelf.js";
-import showBookDetails from "./showBookDetails.js";
+import showBookDetails from "./utils/showBookDetails.js";
+import deleteFromLocalStorage from "./utils/deleteFromLocalStorage.js";
 
 //grab DOM elements
 const cardContainer = get(".card-container");
@@ -82,6 +82,8 @@ cardContainer.addEventListener("click", (e)=> {
             addToLocalStorage(currentBookData);
             bookmarked.classList.add("show-btn");
             notBookmarked.classList.remove("show-btn");
+            displayBookShelf(); //display item right after it has been added
+    
         });
     }
     
@@ -90,16 +92,26 @@ cardContainer.addEventListener("click", (e)=> {
 //open modal when one of the thumbnail on the bookshelf are clicked
 myShelf.addEventListener("click", (e)=> {
     if (e.target.classList.contains("book-cover")) {
-      bookModal.innerHTML = showBookDetails(e.target.dataset.id);
+      let targetElementID = e.target.dataset.id;
+      bookModal.innerHTML = showBookDetails(targetElementID);
       bookModal.classList.add("show-modal");
       
       //grab modal buttons after they have been added to the DOM
       const modalBackBtn = get(".back-btn");
       const favoriteBtn = get(".favorite-btn");
+      const bookmarked = get(".bookmarked")
+      const notBookmarked = get(".not-bookmarked");
 
       //start listening for clicks on both buttons
         modalBackBtn.addEventListener("click", ()=> {
-        bookModal.classList.remove("show-modal");
+            bookModal.classList.remove("show-modal");
+        });
+
+        favoriteBtn.addEventListener("click", ()=>{
+            deleteFromLocalStorage(targetElementID);
+            bookmarked.classList.remove("show-btn");
+            notBookmarked.classList.add("show-btn");
+            displayBookShelf(); //display item right after it has been deleted
         });
     }
 });
