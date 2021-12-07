@@ -13,12 +13,29 @@ const searchInput = get("input");
 const btn = get(".search-btn");
 const url = "https://www.googleapis.com/books/v1/volumes?q=";
 const bookModal = get(".book-modal");
+const myShelfBtn = get(".my-shelf-btn");
+const searchBooksBtn = get(".search-section-btn");
+const searchContainer = get(".search-container");
+const myShelf = get(".my-shelf");
 
 //global variables
 let responseObject = [];
 
 //when the DOM loads, display booklist on local storage
 window.addEventListener("DOMContentLoaded", displayBookShelf);
+
+
+//add event listeners to both bottom buttoms
+myShelfBtn.addEventListener("click", ()=>{
+    searchContainer.style.visibility ="hidden";
+    myShelf.style.display = "grid";
+    cardContainer.style.display = "none";
+});
+
+searchBooksBtn.addEventListener("click", ()=> {
+    searchContainer.style.visibility ="visible";
+    myShelf.style.display = "none";
+});
 
 //add event listener to the search button
 btn.addEventListener("click",(e)=> {

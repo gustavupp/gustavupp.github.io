@@ -24,13 +24,14 @@ body {
 .search-container {
     position: fixed;
     display: flex;
+    visibility: visible;
     align-items: center;
     justify-content: center;
     top: 0;
     height: 50px;
     width: 100%;
     background-color: var(--background-color);
-    z-index: 99;
+    z-index: 100;
 }
 
 input.search {
@@ -75,7 +76,6 @@ input.search {
     align-items: center;
     background-color: var(--background-color);
     width: 100%;
-    height: 100%;
     font-size: 11px;
 }
 
@@ -99,6 +99,19 @@ p.title {
 .book-info {
     padding: 2px;
 }
+/******************MY SHELF************************/
+
+.my-shelf {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow-y: auto;
+    padding: 20px 10px;
+    z-index: 101;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--background-color);
+}
 
 /******************MODAL CONTAINER****************************/
 .book-modal {
@@ -115,7 +128,7 @@ p.title {
 
 .show-modal {
     visibility: visible;
-    z-index: 101;
+    z-index: 110;
 }
 
 .top-section {
@@ -162,10 +175,10 @@ p.title {
     cursor: pointer;
     padding: 3px 10px;
 }
-/*********************NAVBAR*********************/
+/*********************BOTTOM NAVBAR*********************/
 .navbar {
     position: fixed;
-    z-index: 100;
+    z-index: 102;
     bottom: 0;
     height: 40px;
     width: 100%;

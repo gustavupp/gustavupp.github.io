@@ -8,6 +8,7 @@ function showModal(elementId, object){
 
     //deconstruct responseObject
     const { 
+        id,
         categories,
         volumeInfo: {title},
         volumeInfo: {subtitle = ""} = {},
@@ -58,7 +59,7 @@ function showModal(elementId, object){
                 </div>`;
     }
     let newData = formattedData();
-    return {newData, title, subtitle, authors, thumbnail, description, language, pageCount, publishedDate};
+    return {newData, id, title, subtitle, authors, thumbnail, description, language, pageCount, publishedDate};
 }
 
 export default showModal;
