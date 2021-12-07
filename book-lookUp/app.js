@@ -85,7 +85,16 @@ cardContainer.addEventListener("click", (e)=> {
 //open modal when one of the thumbnail on the bookshelf are clicked
 myShelf.addEventListener("click", (e)=> {
     if (e.target.classList.contains("book-cover")) {
-      //showBookDetails(e);
-      myShelf.innerHTML = showBookDetails(e.target.dataset.id);
+      bookModal.innerHTML = showBookDetails(e.target.dataset.id);
+      bookModal.classList.add("show-modal");
+      
+      //grab modal buttons after they have been added to the DOM
+      const modalBackBtn = get(".back-btn");
+      const favoriteBtn = get(".favorite-btn");
+
+      //start listening for clicks on both buttons
+        modalBackBtn.addEventListener("click", ()=> {
+        bookModal.classList.remove("show-modal");
+        });
     }
 });
