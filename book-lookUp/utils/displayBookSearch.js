@@ -1,5 +1,4 @@
 function displayBookSearch(data){
-    console.log(data)
     const result = data.map((item)=>{
         return `<div class="card">
                     <img src="${(item.volumeInfo.imageLinks)? item.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/120x150/000/fff.png&text=No+Cover!"}" alt="image" class="book-cover" data-id="${item.id}" />

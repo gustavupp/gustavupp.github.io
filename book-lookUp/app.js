@@ -44,18 +44,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
         .catch((error)=> console.log(error));
     }
 
-    let isbnList = getIsbns(nyListLocalStorage);
-    displayBestSellerList(nyListLocalStorage);
-
-    /*fetch(bestSellerUrl)
-    .then((fetchedData)=> fetchedData.json())
-    .then((parsedData) => {
-        let nyListLocalStorage = localStorage.getItem("nyList")? JSON.parse(localStorage.getItem("nyList")): localStorage.setItem("nyList", JSON.stringify(parsedData));
-        
-        let isbnList = getIsbns(nyListLocalStorage);
-        displayBestSellerList(nyListLocalStorage);
-    })
-    .catch((error)=> console.log(error));*/
+    getIsbns(nyListLocalStorage);
 });
 
 //add event listeners to both bottom buttoms
