@@ -1,5 +1,6 @@
 
 function showModal(elementId, object){
+    console.log(object)
     //find the book that was clicked on by searching the array of objects for the book ID
    const bookMatch = object.find((bookId)=> {
         if (bookId.id === elementId){

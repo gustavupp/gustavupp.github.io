@@ -1,19 +1,19 @@
-import { cardContainer } from "../app.js"
+import { nyCardContainer } from "../app.js"
 
 function displayBestSellerList(isbnList){
+    let cardNode = document.createElement("div"); //create new "card" node for every call
+    cardNode.classList.add("card"); //add the "card" class
 
-    let cardNode = document.createElement("div");
-    cardNode.classList.add("card");
+    //render this html content to the node
+    cardNode.innerHTML = `
+                            <img src="${(isbnList.volumeInfo.imageLinks)? isbnList.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/120x150/000/fff.png&text=No+Cover!"}" alt="image" class="book-cover" data-id="${isbnList.id}" />
+                            <div class="book-info">
+                                <p class="title">${isbnList.volumeInfo.title.length > 12? isbnList.volumeInfo.title.slice(0, 12) + "..." : isbnList.volumeInfo.title}</p>
+                            </div>
+                        `;
 
-    
-        cardNode.innerHTML = `<div class="card">
-                                <img src="${(isbnList.volumeInfo.imageLinks)? isbnList.volumeInfo.imageLinks.thumbnail : "https://dummyimage.com/120x150/000/fff.png&text=No+Cover!"}" alt="image" class="book-cover" data-id="${isbnList.id}" />
-                                <div class="book-info">
-                                    <p class="title">${isbnList.volumeInfo.title.length > 12? isbnList.volumeInfo.title.slice(0, 12) + "..." : isbnList.volumeInfo.title}</p>
-                                </div>
-                            </div>`;
-    
-    cardContainer.appendChild(cardNode);
+    //let nyCardContainer = document.querySelector(".nyList-container");
+    nyCardContainer.appendChild(cardNode); //finally apend node to the "cardContainer" node
 }
 
 export default displayBestSellerList;

@@ -8,6 +8,7 @@ import displayBookShelf from "./utils/displayBookShelf.js";
 import showBookDetails from "./utils/showBookDetails.js";
 import deleteFromLocalStorage from "./utils/deleteFromLocalStorage.js";
 import displayBestSellerList from "./utils/displayBestSellerList.js";
+import showNyModal from "./utils/showNyModal.js";
 
 //grab DOM elements
 export const cardContainer = get(".card-container");
@@ -18,6 +19,7 @@ const myShelfBtn = get(".my-shelf-btn");
 const searchBooksBtn = get(".search-section-btn");
 const searchContainer = get(".search-container");
 const myShelf = get(".my-shelf");
+export const nyCardContainer = get(".nyList-container");
 
 //global variable to store the json data from the api, so I can access it from any part of the code
 let responseObject = [];
@@ -32,18 +34,19 @@ window.addEventListener("DOMContentLoaded", ()=> {
     const bestSellerUrl = `https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-nonfiction.json?api-key=${nyTimesApiKey}`;
     
     let nyListLocalStorage = "";
+
     if(localStorage.getItem("nyList")){
         nyListLocalStorage = JSON.parse(localStorage.getItem("nyList"));
     } else {
         fetch(bestSellerUrl)
         .then((fetchedData)=> fetchedData.json())
         .then((parsedData) => {
+
             localStorage.setItem("nyList", JSON.stringify(parsedData));
             nyListLocalStorage = parsedData;
             })
         .catch((error)=> console.log(error));
     }
-
     getIsbns(nyListLocalStorage);
 });
 
@@ -52,12 +55,14 @@ myShelfBtn.addEventListener("click", ()=>{
     searchContainer.style.visibility ="hidden";
     myShelf.style.display = "grid";
     cardContainer.style.display = "none";
+    nyCardContainer.style.display = "none";
 });
 
 searchBooksBtn.addEventListener("click", ()=> {
     searchContainer.style.visibility ="visible";
     myShelf.style.display = "none";
     cardContainer.style.display = "grid";
+    nyCardContainer.style.display = "grid"; //come back to fix the logic here
 });
 
 
@@ -74,8 +79,37 @@ btn.addEventListener("click",(e)=> {
         responseObject = parsedData.items;
     })
     .catch(err => console.log(err));
+
 });
+  
+//container for the ny times best seller list
+nyCardContainer.addEventListener("click", (e)=> {
+    if(e.target.classList.contains("book-cover")){
+        bookModal.innerHTML = showNyModal(e.target.dataset.id);
+
+        //grab modal buttons after they have been added to the DOM
+        const modalBackBtn = get(".back-btn");
+        const favoriteBtn = get(".favorite-btn");
+        const bookmarked = get(".bookmarked")
+        const notBookmarked = get(".not-bookmarked");
+
+        //open modal
+        bookModal.classList.add("show-modal");
+
+        //start listening for clicks on both buttons
+        modalBackBtn.addEventListener("click", ()=> {
+        bookModal.classList.remove("show-modal");
+        });
+        favoriteBtn.addEventListener("click", ()=>{
+
+            addToLocalStorage(currentBookData);
+            bookmarked.classList.add("show-btn");
+            notBookmarked.classList.remove("show-btn");
+            displayBookShelf(); //display item right after it has been added
     
+        });
+    }
+});
 
 //open modal when one of the book thumbnails are clicked
 cardContainer.addEventListener("click", (e)=> {

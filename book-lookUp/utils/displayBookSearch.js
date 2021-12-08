@@ -1,3 +1,5 @@
+import { nyCardContainer } from "../app.js";
+
 function displayBookSearch(data){
     const result = data.map((item)=>{
         return `<div class="card">
@@ -7,6 +9,8 @@ function displayBookSearch(data){
                     </div>
                 </div>`;
     }).join("");
+
+    nyCardContainer.style.display = "none";
     return result;
 }
 

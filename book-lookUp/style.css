@@ -58,7 +58,7 @@ input.search {
     font-size: var(--buttons-size);
 }
 /******************BOOKS CONTAINER****************************/
-.card-container {
+.card-container, .nyList-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 10px;
@@ -70,7 +70,7 @@ input.search {
 }
 
 @media screen and (min-width: 996px) {
-    .card-container {
+    .card-container, .nyList-container {
         grid-template-columns: repeat(5, 1fr);
         max-width: 1100px;
     }
