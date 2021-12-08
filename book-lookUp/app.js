@@ -1,15 +1,16 @@
 //import modules
 import get from "./utils/getElement.js";
-import getData from "./utils/getData.js";
+import getIsbns from "./utils/getIsbns.js";
 import displayBookSearch from "./utils/displayBookSearch.js";
 import showModal from "./utils/showModal.js";
 import addToLocalStorage from "./utils/addToLocalStorage.js";
 import displayBookShelf from "./utils/displayBookShelf.js";
 import showBookDetails from "./utils/showBookDetails.js";
 import deleteFromLocalStorage from "./utils/deleteFromLocalStorage.js";
+import displayBestSellerList from "./utils/displayBestSellerList.js";
 
 //grab DOM elements
-const cardContainer = get(".card-container");
+export const cardContainer = get(".card-container");
 const searchInput = get("input");
 const btn = get(".search-btn");
 const bookModal = get(".book-modal");
@@ -20,10 +21,42 @@ const myShelf = get(".my-shelf");
 
 //global variable to store the json data from the api, so I can access it from any part of the code
 let responseObject = [];
+export const googleApiKey = "AIzaSyACW9GJ7NQttkNzbCSFj-F5C2ORvM-8wxw";
+const nyTimesApiKey = "Xz8st6xWj2CFpfXmKxDgLaWe9pKSYPRA";
 
 //when the DOM loads, display booklist on local storage
 window.addEventListener("DOMContentLoaded", displayBookShelf);
 
+//when DOM loads also fetch NY BestSeller list from api
+window.addEventListener("DOMContentLoaded", ()=> {
+    const bestSellerUrl = `https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-nonfiction.json?api-key=${nyTimesApiKey}`;
+    
+    let nyListLocalStorage = "";
+    if(localStorage.getItem("nyList")){
+        nyListLocalStorage = JSON.parse(localStorage.getItem("nyList"));
+    } else {
+        fetch(bestSellerUrl)
+        .then((fetchedData)=> fetchedData.json())
+        .then((parsedData) => {
+            localStorage.setItem("nyList", JSON.stringify(parsedData));
+            nyListLocalStorage = parsedData;
+            })
+        .catch((error)=> console.log(error));
+    }
+
+    let isbnList = getIsbns(nyListLocalStorage);
+    displayBestSellerList(nyListLocalStorage);
+
+    /*fetch(bestSellerUrl)
+    .then((fetchedData)=> fetchedData.json())
+    .then((parsedData) => {
+        let nyListLocalStorage = localStorage.getItem("nyList")? JSON.parse(localStorage.getItem("nyList")): localStorage.setItem("nyList", JSON.stringify(parsedData));
+        
+        let isbnList = getIsbns(nyListLocalStorage);
+        displayBestSellerList(nyListLocalStorage);
+    })
+    .catch((error)=> console.log(error));*/
+});
 
 //add event listeners to both bottom buttoms
 myShelfBtn.addEventListener("click", ()=>{
@@ -44,11 +77,12 @@ btn.addEventListener("click",(e)=> {
     e.preventDefault();
     const inputValue = searchInput.value.replace(" ", "+");
     const searchUrl = `https://www.googleapis.com/books/v1/volumes?q=${inputValue}&maxResults=40`;
-    getData(searchUrl)
-    .then(response => {
-        cardContainer.innerHTML = displayBookSearch(response);
-        responseObject = JSON.parse(response);
-        responseObject = responseObject.items;
+    
+    fetch(searchUrl)
+    .then((fetchedData)=> fetchedData.json())
+    .then((parsedData) => {
+        cardContainer.innerHTML = displayBookSearch(parsedData.items);
+        responseObject = parsedData.items;
     })
     .catch(err => console.log(err));
 });
