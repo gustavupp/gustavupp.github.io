@@ -44,17 +44,17 @@ function showNyModal(targetElementID){
                         <i class="fas fa-arrow-left"></i>
                     </buttom>
                     <buttom class="favorite-btn">
-                        <span class="not-bookmarked">
+                        <span class="not-bookmarked  show-btn">
                             <i class="far fa-bookmark"></i>
                         </span>
-                        <span class="bookmarked show-btn">
+                        <span class="bookmarked">
                             <i class="fas fa-bookmark"></i>
                         </span>
                     </buttom>
                 </div>`;
     }
-    console.log(formattedData())
-    return formattedData();
+    let newData = formattedData();
+    return {newData, findMatch};
 }
 
 export default showNyModal;

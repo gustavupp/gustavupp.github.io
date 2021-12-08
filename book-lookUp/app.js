@@ -85,8 +85,9 @@ btn.addEventListener("click",(e)=> {
 //container for the ny times best seller list
 nyCardContainer.addEventListener("click", (e)=> {
     if(e.target.classList.contains("book-cover")){
-        bookModal.innerHTML = showNyModal(e.target.dataset.id);
-
+        let nyBookData = showNyModal(e.target.dataset.id);
+        bookModal.innerHTML = nyBookData.newData;
+        
         //grab modal buttons after they have been added to the DOM
         const modalBackBtn = get(".back-btn");
         const favoriteBtn = get(".favorite-btn");
@@ -100,9 +101,11 @@ nyCardContainer.addEventListener("click", (e)=> {
         modalBackBtn.addEventListener("click", ()=> {
         bookModal.classList.remove("show-modal");
         });
-        favoriteBtn.addEventListener("click", ()=>{
 
-            addToLocalStorage(currentBookData);
+        favoriteBtn.addEventListener("click", ()=>{
+            addToLocalStorage(nyBookData.findMatch);
+
+            //addToLocalStorage(nyBookData.localStorageList);
             bookmarked.classList.add("show-btn");
             notBookmarked.classList.remove("show-btn");
             displayBookShelf(); //display item right after it has been added
