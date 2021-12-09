@@ -37,17 +37,18 @@ window.addEventListener("DOMContentLoaded", ()=> {
     //check if the list has been fetched before, if so get it from local storage instead
     if(localStorage.getItem("nyList")){
         nyListLocalStorage = JSON.parse(localStorage.getItem("nyList"));
+        getIsbns(nyListLocalStorage);
     } else {
         fetch(bestSellerUrl)
         .then((fetchedData)=> fetchedData.json())
         .then((parsedData) => {
-
             localStorage.setItem("nyList", JSON.stringify(parsedData));
-            nyListLocalStorage = parsedData;
+            getIsbns(parsedData);
             })
         .catch((error)=> console.log(error));
+        nyListLocalStorage = parsedData;
     }
-    getIsbns(nyListLocalStorage);
+    
 });
 
 //add event listeners to both bottom buttoms
