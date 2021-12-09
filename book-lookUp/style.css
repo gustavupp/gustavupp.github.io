@@ -66,10 +66,11 @@ input.search {
     justify-content: center;
     margin: auto;
     margin-top: 55px; /*height of fixed search bar*/
+    margin-bottom: var(--bottom-navbar-height);
     place-items: center;
 }
 
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 680px) {
     .card-container, .nyList-container {
         grid-template-columns: repeat(5, 1fr);
         max-width: 1100px;
@@ -91,10 +92,17 @@ input.search {
     cursor: pointer;
 }
 
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 900px) {
     .book-cover {
         width: 110px;
         height: 140px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .book-cover {
+        width: 140px;
+        height: 180px;
     }
 }
 
@@ -109,8 +117,12 @@ p.title {
 }
 /******************MY SHELF************************/
 
-.my-shelf {
+.my-shelf-wrapper-container{
     display: none;
+}
+
+.my-shelf {
+    display: grid;
     top: 0;
     left: 0;
     width: 100%;
@@ -119,11 +131,17 @@ p.title {
     z-index: 101;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: var(--background-color);
+    grid-row-gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--bottom-navbar-height);
 }
 
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 680px) {
     .my-shelf {
         grid-template-columns: repeat(5, 1fr);
+        max-width: 1100px;
+        margin: auto;
     }
 }
 

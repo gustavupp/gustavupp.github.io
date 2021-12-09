@@ -20,6 +20,9 @@ const searchBooksBtn = get(".search-section-btn");
 const searchContainer = get(".search-container");
 const myShelf = get(".my-shelf");
 export const nyCardContainer = get(".nyList-container");
+const bestSellerTitle = get(".best-seller-title");
+const nyWrapperContainer = get(".nyList-wrapper-container");
+const myShelfWrapperContainer = get(".my-shelf-wrapper-container");
 
 //global variable to store the json data from the api, so I can access it from any part of the code
 let responseObject = [];
@@ -33,11 +36,9 @@ window.addEventListener("DOMContentLoaded", displayBookShelf);
 window.addEventListener("DOMContentLoaded", ()=> {
     const bestSellerUrl = `https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-nonfiction.json?api-key=${nyTimesApiKey}`;
     
-    let nyListLocalStorage = "";
     //check if the list has been fetched before, if so get it from local storage instead
     if(localStorage.getItem("nyList")){
-        nyListLocalStorage = JSON.parse(localStorage.getItem("nyList"));
-        getIsbns(nyListLocalStorage);
+        getIsbns(JSON.parse(localStorage.getItem("nyList")));
     } else {
         fetch(bestSellerUrl)
         .then((fetchedData)=> fetchedData.json())
@@ -46,7 +47,6 @@ window.addEventListener("DOMContentLoaded", ()=> {
             getIsbns(parsedData);
             })
         .catch((error)=> console.log(error));
-        nyListLocalStorage = parsedData;
     }
     
 });
@@ -54,16 +54,22 @@ window.addEventListener("DOMContentLoaded", ()=> {
 //add event listeners to both bottom buttoms
 myShelfBtn.addEventListener("click", ()=>{
     searchContainer.style.visibility ="hidden";
-    myShelf.style.display = "grid";
+    //myShelf.style.display = "grid";
+    myShelfWrapperContainer.style.display = "block";
     cardContainer.style.display = "none";
-    nyCardContainer.style.display = "none";
+    nyWrapperContainer.style.display = "none";
+    //nyCardContainer.style.display = "none";
+    bestSellerTitle.style.display = "none";
 });
 
 searchBooksBtn.addEventListener("click", ()=> {
     searchContainer.style.visibility ="visible";
-    myShelf.style.display = "none";
+    //myShelf.style.display = "none";
+    myShelfWrapperContainer.style.display = "none";
     cardContainer.style.display = "grid";
-    nyCardContainer.style.display = "grid"; //come back to fix the logic here
+    //nyCardContainer.style.display = "grid"; //come back to fix the logic here
+    nyWrapperContainer.style.display = "block";
+    bestSellerTitle.style.display = "block";
 });
 
 
