@@ -13,6 +13,7 @@ function getIsbns(nyList){
         .then(fetchedData => fetchedData.json())
         .then((parsedData)=> {
 
+            //destructure object
             let newParsedData = parsedData.items[0];
 
             let {

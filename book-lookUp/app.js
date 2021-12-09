@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
     const bestSellerUrl = `https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-nonfiction.json?api-key=${nyTimesApiKey}`;
     
     let nyListLocalStorage = "";
-
+    //check if the list has been fetched before, if so get it from local storage instead
     if(localStorage.getItem("nyList")){
         nyListLocalStorage = JSON.parse(localStorage.getItem("nyList"));
     } else {

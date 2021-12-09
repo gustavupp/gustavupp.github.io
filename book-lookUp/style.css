@@ -121,6 +121,12 @@ p.title {
     background-color: var(--background-color);
 }
 
+@media screen and (min-width: 996px) {
+    .my-shelf {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 /******************MODAL CONTAINER****************************/
 .book-modal {
     position: fixed;
