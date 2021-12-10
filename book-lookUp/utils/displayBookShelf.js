@@ -1,9 +1,18 @@
 import getLocalStorage from "./getLocalStorage.js";
 import get from "./getElement.js";
+import { myBookShelfCount } from "../app.js";
+
 
 function displayBookShelf(){
 
     let localStorageList = getLocalStorage();
+
+    let bookShelfCounter = 0;
+    for (let book in localStorageList){
+        bookShelfCounter++
+    }
+    myBookShelfCount.textContent = `(${bookShelfCounter} Books)`;
+
     localStorageList = localStorageList.map((item)=>{
         return `<div class="card">
                     <img src="${item.thumbnail}" alt="image" class="book-cover" data-id="${item.id}"; />
@@ -16,7 +25,6 @@ function displayBookShelf(){
     //grab parent element and apend bookList
     const myShelf = get(".my-shelf");
     myShelf.innerHTML = localStorageList;
-
     return localStorageList;
 }
 

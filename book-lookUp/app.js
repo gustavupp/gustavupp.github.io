@@ -25,6 +25,7 @@ export const nyWrapperContainer = get(".nyList-wrapper-container");
 const myShelfWrapperContainer = get(".my-shelf-wrapper-container");
 const cardContainerWrapper = get(".card-container-wrapper");
 const resutlsTitle = get(".results-title");
+export const myBookShelfCount = get(".myShelf-book-count");
 
 //global variable to store the json data from the api, so I can access it from any part of the code
 let responseObject = [];
@@ -60,6 +61,8 @@ myShelfBtn.addEventListener("click", ()=>{
     cardContainerWrapper.style.display = "none";
     nyWrapperContainer.style.display = "none";
     bestSellerTitle.style.display = "none";
+    myShelfBtn.style.color = "white";
+    searchBooksBtn.style.color = "rgb(139, 139, 139)";
 });
 
 searchBooksBtn.addEventListener("click", ()=> {
@@ -68,6 +71,8 @@ searchBooksBtn.addEventListener("click", ()=> {
     cardContainerWrapper.style.display = "block";
     nyWrapperContainer.style.display = "block";
     bestSellerTitle.style.display = "block";
+    myShelfBtn.style.color = "rgb(139, 139, 139)";
+    searchBooksBtn.style.color = "white";
 });
 
 

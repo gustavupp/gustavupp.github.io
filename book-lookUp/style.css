@@ -1,7 +1,7 @@
 /*********COLORS***********/
 :root {
-    --background-color: rgb(27, 27, 27);
-    --secondary-color: rgb(44, 44, 44);
+    --background-color: rgb(36, 36, 36);
+    --secondary-color: rgb(54, 54, 54);
     --tertiary-color: rgb(139, 139, 139);
     --font-color: #F5F6F7;
     --bottom-navbar-height: 60px;
@@ -24,6 +24,11 @@ body {
 
 a {
     text-decoration: none;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: 500;
 }
 
 /****************SEARCH BAR**************************/
@@ -151,6 +156,17 @@ p.title {
     display: none;
 }
 
+.myShelf-top-section {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--background-color);
+}
+
 .my-shelf {
     display: grid;
     top: 0;
@@ -165,6 +181,7 @@ p.title {
     align-items: center;
     justify-content: center;
     margin-bottom: var(--bottom-navbar-height);
+    margin-top: 70px; /*same as myShelf-top-section height*/
 }
 
 @media screen and (min-width: 680px) {
@@ -289,4 +306,8 @@ p.title {
     color: var(--tertiary-color);
     cursor: pointer;
     font-size: 24px;
+}
+
+.search-section-btn {
+    color:white;
 }
