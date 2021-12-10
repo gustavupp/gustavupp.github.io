@@ -7,12 +7,14 @@ function displayBookShelf(){
 
     let localStorageList = getLocalStorage();
 
+    //quick setup to count the amount of books in the bookShelf
     let bookShelfCounter = 0;
     for (let book in localStorageList){
         bookShelfCounter++
     }
     myBookShelfCount.textContent = `(${bookShelfCounter} Books)`;
 
+    //iterate through the array and render html
     localStorageList = localStorageList.map((item)=>{
         return `<div class="card">
                     <img src="${item.thumbnail}" alt="image" class="book-cover" data-id="${item.id}"; />
