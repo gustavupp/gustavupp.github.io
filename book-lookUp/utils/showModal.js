@@ -69,7 +69,7 @@ function showModal(elementId, object){
                             <i class="fas fa-bookmark"></i>
                         </span>
                     </buttom>
-                    <a href="${buyLink}" target="_blank" class="buy-btn">BUY BOOK</a>
+                    <a type="button" href="${buyLink}" target="_blank" class="buy-btn" style="${buyLink? "background-color: rgb(75, 177, 100);": "background-color: rgba(128, 128, 128, 0.4); color:rgba(255, 255, 255, 0.65); box-shadow: 0px 4px rgb(85, 85, 85); pointer-events: none;"}">BUY BOOK</a>
                 </div>`;
     }
     let newData = formattedData();

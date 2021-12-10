@@ -248,6 +248,7 @@ p.title {
     color: white;
     font-weight: 500;
     box-shadow: 0px 4px rgb(57, 116, 72);
+    font-size: 12px;
 }
 
 .show-btn {
