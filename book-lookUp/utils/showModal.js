@@ -1,17 +1,17 @@
 
 function showModal(elementId, object){
-    console.log(object)
+
     //find the book that was clicked on by searching the array of objects for the book ID
    const bookMatch = object.find((bookId)=> {
         if (bookId.id === elementId){
             return bookId;
         }
     });
-
+    
     //deconstruct responseObject
     const { 
         id,
-        categories,
+        volumeInfo: {categories},
         volumeInfo: {title},
         volumeInfo: {subtitle = ""} = {},
         volumeInfo: {authors},
@@ -19,8 +19,11 @@ function showModal(elementId, object){
         volumeInfo: {description},
         volumeInfo: {language},
         volumeInfo: {pageCount},
-        volumeInfo: {publishedDate}
+        volumeInfo: {publishedDate}, 
     } = bookMatch;
+    
+    const isbn10Number = bookMatch.volumeInfo.industryIdentifiers[1].identifier;
+    
 
     //format the data that will return from the function, ready to be displayed
     const formattedData = ()=>{
@@ -48,6 +51,8 @@ function showModal(elementId, object){
                     <p>${language}</p><br>
                     <h4>PUBLISHED DATE</h4>
                     <p>${publishedDate}</p><br>
+                    <h4>ISBN</h4>
+                    <p>${isbn10Number}</p>
                 </div>
 
                 <!-----bottom section----->
@@ -66,7 +71,7 @@ function showModal(elementId, object){
                 </div>`;
     }
     let newData = formattedData();
-    return {newData, id, title, subtitle, authors, thumbnail, description, language, pageCount, publishedDate};
+    return {newData, id, title, subtitle, authors, thumbnail, description, categories, language, pageCount, publishedDate, isbn10Number};
 }
 
 export default showModal;

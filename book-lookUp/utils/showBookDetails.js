@@ -35,6 +35,8 @@ function showBookDetails(targetElementID){
                     <p>${findMatch.language}</p><br>
                     <h4>PUBLISHED DATE</h4>
                     <p>${findMatch.publishedDate}</p><br>
+                    <h4>ISBN</h4>
+                    <p>${findMatch.isbn10Number}</p>
                 </div>
 
                 <!-----bottom section----->
