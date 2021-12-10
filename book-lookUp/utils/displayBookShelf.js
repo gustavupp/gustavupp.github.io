@@ -8,7 +8,7 @@ function displayBookShelf(){
         return `<div class="card">
                     <img src="${item.thumbnail}" alt="image" class="book-cover" data-id="${item.id}"; />
                     <div class="book-info">
-                        <p class="title">${item.title.length > 12 ? item.title.slice(0, 12) + "..." : item.title}</p>
+                        <p class="title">${item.title.length > 11 ? item.title.slice(0, 11) + "..." : item.title}</p>
                     </div>
                 </div>`;
     }).join("");

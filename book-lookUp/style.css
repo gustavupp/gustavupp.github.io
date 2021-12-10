@@ -19,7 +19,7 @@
 body {
     background-color: var(--background-color);
     color: var(--font-color);
-    font-size: 13px;
+    font-size: 16px;
 }
 
 /****************SEARCH BAR**************************/
@@ -46,6 +46,13 @@ input.search {
     width: 280px;
     background-color: rgb(49, 49, 49);
     color: var(--font-color);
+    font-size: 16px;
+}
+
+@media screen and (min-width: 996px) {
+    input.search {
+        width: 600px;
+    }
 }
 
 ::placeholder { color: var(--font-color);}
@@ -58,6 +65,20 @@ input.search {
     font-size: var(--buttons-size);
 }
 /******************BOOKS CONTAINER****************************/
+.card-container-wrapper, .nyList-wrapper-container {
+    margin-top: 55px; /*height of fixed search bar*/
+}
+
+.best-seller-title {
+    margin-top: -50px;
+    margin-bottom: 20px;
+}
+
+.results-title {
+    display: none;
+    margin: 20px;
+}
+
 .card-container, .nyList-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -65,7 +86,7 @@ input.search {
     align-items: center;
     justify-content: center;
     margin: auto;
-    margin-top: 55px; /*height of fixed search bar*/
+    
     margin-bottom: var(--bottom-navbar-height);
     place-items: center;
 }
@@ -83,7 +104,6 @@ input.search {
     align-items: center;
     background-color: var(--background-color);
     width: 100%;
-    font-size: 11px;
 }
 
 .book-cover {
@@ -108,7 +128,13 @@ input.search {
 
 p.title {
     margin-top: -10px;
-    font-size: 10px;
+    font-size: 13px;
+}
+
+@media screen and (min-width: 1100px) {
+    p.title {
+        font-size: 16px;
+    }
 }
 
 .book-info {

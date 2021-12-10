@@ -8,7 +8,7 @@ function displayBestSellerList(isbnList){
     cardNode.innerHTML = `
                             <img src="${(isbnList.thumbnail)? isbnList.thumbnail : "https://dummyimage.com/120x150/000/fff.png&text=No+Cover!"}" alt="image" class="book-cover" data-id="${isbnList.id}" />
                             <div class="book-info">
-                                <p class="title">${isbnList.title.length > 12? isbnList.title.slice(0, 12) + "..." : isbnList.title}</p>
+                                <p class="title">${isbnList.title.length > 11? isbnList.title.slice(0, 11) + "..." : isbnList.title}</p>
                             </div>
                         `;
 
