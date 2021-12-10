@@ -1,7 +1,6 @@
 import getLocalStorage from "./getLocalStorage.js";
 
 function showNyModal(targetElementID){
-    //console.log(targetElementID)
 
     let localStorageList = JSON.parse(localStorage.getItem("nyTimesList"));
     
@@ -53,6 +52,7 @@ function showNyModal(targetElementID){
                             <i class="fas fa-bookmark"></i>
                         </span>
                     </buttom>
+                    <a href="${findMatch.buyLink}" target="_blank" class="buy-btn">BUY BOOK</a>
                 </div>`;
     }
     let newData = formattedData();

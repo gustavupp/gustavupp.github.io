@@ -1,6 +1,6 @@
 
 function showModal(elementId, object){
-
+    console.log(object)
     //find the book that was clicked on by searching the array of objects for the book ID
    const bookMatch = object.find((bookId)=> {
         if (bookId.id === elementId){
@@ -19,10 +19,11 @@ function showModal(elementId, object){
         volumeInfo: {description},
         volumeInfo: {language},
         volumeInfo: {pageCount},
-        volumeInfo: {publishedDate}, 
+        volumeInfo: {publishedDate},
+        saleInfo: {buyLink}, 
     } = bookMatch;
     
-    const isbn10Number = bookMatch.volumeInfo.industryIdentifiers[1].identifier;
+    const isbn10Number = bookMatch.volumeInfo.industryIdentifiers[1]? bookMatch.volumeInfo.industryIdentifiers[1].identifier: "This Title Has No ISBN";
     
 
     //format the data that will return from the function, ready to be displayed
@@ -68,10 +69,11 @@ function showModal(elementId, object){
                             <i class="fas fa-bookmark"></i>
                         </span>
                     </buttom>
+                    <a href="${buyLink}" target="_blank" class="buy-btn">BUY BOOK</a>
                 </div>`;
     }
     let newData = formattedData();
-    return {newData, id, title, subtitle, authors, thumbnail, description, categories, language, pageCount, publishedDate, isbn10Number};
+    return {newData, id, title, subtitle, authors, thumbnail, description, categories, language, pageCount, publishedDate, isbn10Number, buyLink};
 }
 
 export default showModal;

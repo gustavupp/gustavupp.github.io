@@ -22,6 +22,10 @@ body {
     font-size: 16px;
 }
 
+a {
+    text-decoration: none;
+}
+
 /****************SEARCH BAR**************************/
 
 .search-container {
@@ -235,8 +239,23 @@ p.title {
     padding: 3px 10px;
     font-size: var(--buttons-size);
 }
+
+.buy-btn {
+    background-color: rgb(75, 177, 100);
+    border-style: none;
+    border-radius: 8px;
+    padding: 5px 8px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0px 4px rgb(57, 116, 72);
+}
+
 .show-btn {
     display: block;
+}
+
+.bookmarked {
+    color: tomato;
 }
 
 .bookmarked, .not-bookmarked {

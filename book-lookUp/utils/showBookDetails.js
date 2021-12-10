@@ -52,6 +52,7 @@ function showBookDetails(targetElementID){
                             <i class="fas fa-bookmark"></i>
                         </span>
                     </buttom>
+                    <a href="${findMatch.buyLink}" target="_blank" class="buy-btn">BUY BOOK</a>
                 </div>`;
     });
     return formattedBookData();

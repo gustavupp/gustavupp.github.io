@@ -11,7 +11,6 @@ function displayBookSearch(data){
                 </div>`;
     }).join("");
 
-    //nyCardContainer.style.display = "none";
     nyWrapperContainer.style.display = "none";
     return result;
 }

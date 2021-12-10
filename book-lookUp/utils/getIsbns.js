@@ -33,6 +33,7 @@ function getIsbns(nyList){
                     volumeInfo: {language},
                     volumeInfo: {pageCount},
                     volumeInfo: {publishedDate},
+                    saleInfo: {buyLink},
                 } = newParsedData;
 
                 const isbn10Number = newParsedData.volumeInfo.industryIdentifiers[1].identifier;
@@ -41,14 +42,14 @@ function getIsbns(nyList){
 
                 if(localStorage.getItem("nyTimesList")){
                     nyLocalStorageList = JSON.parse(localStorage.getItem("nyTimesList"));
-                    nyLocalStorageList.push({id, title, subtitle, authors, thumbnail, description, categories, language, pageCount, publishedDate, isbn10Number});
+                    nyLocalStorageList.push({id, title, subtitle, authors, thumbnail, description, categories, language, pageCount, publishedDate, isbn10Number,buyLink});
                 } else {
-                    nyLocalStorageList = [{id, title, subtitle, authors, thumbnail, description, categories, language, pageCount, publishedDate, isbn10Number}];
+                    nyLocalStorageList = [{id, title, subtitle, authors, thumbnail, description, categories, language, pageCount, publishedDate, isbn10Number, buyLink}];
                 }
-
+                console.log(nyLocalStorageList)
                 localStorage.setItem("nyTimesList", JSON.stringify(nyLocalStorageList));
                 
-                displayBestSellerList({id, title, subtitle, authors, thumbnail, description, categories, language, pageCount, publishedDate, isbn10Number});
+                displayBestSellerList({id, title, subtitle, authors, thumbnail, description, categories, language, pageCount, publishedDate, isbn10Number, buyLink});
             })
             .catch((err) => console.log(err));
         });

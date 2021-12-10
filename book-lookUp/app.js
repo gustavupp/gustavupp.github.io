@@ -56,22 +56,16 @@ window.addEventListener("DOMContentLoaded", ()=> {
 //add event listeners to both bottom buttoms
 myShelfBtn.addEventListener("click", ()=>{
     searchContainer.style.visibility ="hidden";
-    //myShelf.style.display = "grid";
     myShelfWrapperContainer.style.display = "block";
-    //cardContainer.style.display = "none";
     cardContainerWrapper.style.display = "none";
     nyWrapperContainer.style.display = "none";
-    //nyCardContainer.style.display = "none";
     bestSellerTitle.style.display = "none";
 });
 
 searchBooksBtn.addEventListener("click", ()=> {
     searchContainer.style.visibility ="visible";
-    //myShelf.style.display = "none";
     myShelfWrapperContainer.style.display = "none";
-    //cardContainer.style.display = "grid";
     cardContainerWrapper.style.display = "block";
-    //nyCardContainer.style.display = "grid"; //come back to fix the logic here
     nyWrapperContainer.style.display = "block";
     bestSellerTitle.style.display = "block";
 });
