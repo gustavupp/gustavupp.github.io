@@ -3,16 +3,16 @@ import get from "./getElement.js";
 import { myBookShelfCount } from "../app.js";
 
 
-function displayBookShelf(){
-
-    let localStorageList = getLocalStorage();
+function displayBookShelf(localStorageContent){
+    console.log(localStorageContent)
+    let localStorageList = localStorageContent;
 
     //quick setup to count the amount of books in the bookShelf
     let bookShelfCounter = 0;
     for (let book in localStorageList){
         bookShelfCounter++
     }
-    myBookShelfCount.textContent = `(${bookShelfCounter} Books)`;
+    myBookShelfCount.textContent = `(${bookShelfCounter} Books)`; //book count displayed at myshelf
 
     //iterate through the array and render html
     localStorageList = localStorageList.map((item)=>{

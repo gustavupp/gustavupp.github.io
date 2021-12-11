@@ -2,7 +2,7 @@ import getLocalStorage from "./getLocalStorage.js";
 
 function showBookDetails(targetElementID){
     
-    let localStorageItems = getLocalStorage();
+    let localStorageItems = getLocalStorage('list');
 
     let findMatch = localStorageItems.find((item) =>{
         if (item.id === targetElementID) {
@@ -10,7 +10,7 @@ function showBookDetails(targetElementID){
         }
     });
 
-    let formattedBookData = (() => {
+    let formattedBookData = () => {
             return `<div class="top-section">
                     <img src="${findMatch.thumbnail}" data-id="${findMatch.id}" alt="book cover" />
                     <div class="book-info">
@@ -54,7 +54,7 @@ function showBookDetails(targetElementID){
                     </buttom>
                     <a type="button" href="${findMatch.buyLink}" target="_blank" class="buy-btn" style="${findMatch.buyLink? "background-color: rgb(75, 177, 100);": "background-color: rgba(128, 128, 128, 0.4); color:rgba(255, 255, 255, 0.65); box-shadow: 0px 4px rgb(85, 85, 85); pointer-events: none;"}">BUY BOOK</a>
                 </div>`;
-    });
+    };
     return formattedBookData();
 }
 

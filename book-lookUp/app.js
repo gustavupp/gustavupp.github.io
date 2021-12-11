@@ -9,11 +9,12 @@ import showBookDetails from "./utils/showBookDetails.js";
 import deleteFromLocalStorage from "./utils/deleteFromLocalStorage.js";
 import displayBestSellerList from "./utils/displayBestSellerList.js";
 import showNyModal from "./utils/showNyModal.js";
+import getLocalStorage from "./utils/getLocalStorage.js";
 
 //grab DOM elements
 export const cardContainer = get(".card-container");
 const searchInput = get("input");
-const btn = get(".search-btn");
+const searchBtn = get(".search-btn");
 const bookModal = get(".book-modal");
 const myShelfBtn = get(".my-shelf-btn");
 const searchBooksBtn = get(".search-section-btn");
@@ -26,6 +27,8 @@ const myShelfWrapperContainer = get(".my-shelf-wrapper-container");
 const cardContainerWrapper = get(".card-container-wrapper");
 const resutlsTitle = get(".results-title");
 export const myBookShelfCount = get(".myShelf-book-count");
+const bookShelfForm = get(".bookShelf-form");
+const myShelfInput = get(".myShelf-search");
 
 //global variable to store the json data from the api, so I can access it from any part of the code
 let responseObject = [];
@@ -33,7 +36,9 @@ export const googleApiKey = "AIzaSyACW9GJ7NQttkNzbCSFj-F5C2ORvM-8wxw";
 const nyTimesApiKey = "Xz8st6xWj2CFpfXmKxDgLaWe9pKSYPRA";
 
 //when the DOM loads, display booklist on local storage
-window.addEventListener("DOMContentLoaded", displayBookShelf);
+window.addEventListener("DOMContentLoaded", ()=>{
+    displayBookShelf(getLocalStorage());
+});
 
 //when DOM loads also fetch NY BestSeller list from api
 window.addEventListener("DOMContentLoaded", ()=> {
@@ -77,7 +82,7 @@ searchBooksBtn.addEventListener("click", ()=> {
 
 
 //add event listener for the search button
-btn.addEventListener("click",(e)=> {
+searchBtn.addEventListener("click",(e)=> {
     e.preventDefault();
     const inputValue = searchInput.value.replace(" ", "+");
     const searchUrl = `https://www.googleapis.com/books/v1/volumes?q=${inputValue}&maxResults=40`;
@@ -119,7 +124,7 @@ nyCardContainer.addEventListener("click", (e)=> {
             //addToLocalStorage(nyBookData.localStorageList);
             bookmarked.classList.add("show-btn");
             notBookmarked.classList.remove("show-btn");
-            displayBookShelf(); //display item right after it has been added
+            displayBookShelf(getLocalStorage()); //display item right after it has been added
     
         });
     }
@@ -153,7 +158,7 @@ cardContainer.addEventListener("click", (e)=> {
             addToLocalStorage(currentBookData);
             bookmarked.classList.add("show-btn");
             notBookmarked.classList.remove("show-btn");
-            displayBookShelf(); //display item right after it has been added
+            displayBookShelf(getLocalStorage()); //display item right after it has been added
     
         });
     }
@@ -182,7 +187,29 @@ myShelf.addEventListener("click", (e)=> {
             deleteFromLocalStorage(targetElementID);
             bookmarked.classList.remove("show-btn");
             notBookmarked.classList.add("show-btn");
-            displayBookShelf(); //display item right after it has been deleted
+            
+            displayBookShelf(getLocalStorage()); //display item right after it has been deleted
         });
     }
+});
+
+//search filter on myshelf
+bookShelfForm.addEventListener("keyup", function() {
+    const inputValue = myShelfInput.value;
+    let currentLocalstorage = getLocalStorage();
+    if (inputValue) {
+        currentLocalstorage = currentLocalstorage.filter((item)=> {
+            let title = item.title;
+            title = title.toLowerCase();
+            if(title.startsWith(inputValue)){
+                return item;
+            }
+        });
+        //console.log(currentLocalstorage)
+            displayBookShelf(currentLocalstorage);
+        
+    } else {
+        displayBookShelf(getLocalStorage());
+    }
+    
 });

@@ -46,7 +46,7 @@ h1 {
     z-index: 100;
 }
 
-input.search {
+.search, .myShelf-search {
     text-align: left;
     border-style: none;
     padding-left: 10px;
@@ -156,8 +156,18 @@ p.title {
     top: 0;
     left: 0;
     width: 100%;
-    height: 70px;
+    height: 90px;
     background-color: var(--background-color);
+}
+
+.shelf-title-div {
+    display: flex;
+}
+
+.myShelf-search {
+    height: 25px;
+    width: 290px;
+    font-size: 14px;
 }
 
 .my-shelf {
@@ -174,7 +184,7 @@ p.title {
     align-items: center;
     justify-content: center;
     margin-bottom: var(--bottom-navbar-height);
-    margin-top: 70px; /*same as myShelf-top-section height*/
+    margin-top: 90px; /*same as myShelf-top-section height*/
 }
 
 @media screen and (min-width: 680px) {
@@ -182,7 +192,7 @@ p.title {
         grid-template-columns: repeat(5, 1fr);
         max-width: 900px;
         margin: auto;
-        margin-top: 70px; /*same as myShelf-top-section height*/
+        margin-top: 90px; /*same as myShelf-top-section height*/
         margin-bottom: var(--bottom-navbar-height);  /*had to redefine margin values otherwise it wouldn't work*/
     }
 }
