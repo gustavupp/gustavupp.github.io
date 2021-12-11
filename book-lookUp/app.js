@@ -207,6 +207,9 @@ bookShelfForm.addEventListener("keyup", function() {
         });
         //console.log(currentLocalstorage)
             displayBookShelf(currentLocalstorage);
+            if (currentLocalstorage < 1){
+                myShelf.innerHTML = `<div class="no-matches">No Books Matched Your Search :(</div>`;
+            }
         
     } else {
         displayBookShelf(getLocalStorage());

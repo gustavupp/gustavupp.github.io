@@ -197,6 +197,12 @@ p.title {
     }
 }
 
+.no-matches {
+    position: fixed;
+    margin: auto;
+    width: 100%;
+}
+
 /******************MODAL CONTAINER****************************/
 .book-modal {
     position: fixed;
