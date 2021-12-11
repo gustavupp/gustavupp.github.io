@@ -201,7 +201,7 @@ bookShelfForm.addEventListener("keyup", function() {
         currentLocalstorage = currentLocalstorage.filter((item)=> {
             let title = item.title;
             title = title.toLowerCase();
-            if(title.startsWith(inputValue)){
+            if(title.includes(inputValue)){ //had set it up intially with .startsWith() instead of .includes()
                 return item;
             }
         });

@@ -27,7 +27,7 @@ a {
 }
 
 h1 {
-    font-size: 26px;
+    font-size: 25px;
     font-weight: 500;
 }
 
@@ -160,14 +160,33 @@ p.title {
     background-color: var(--background-color);
 }
 
+.title-and-dropdown {
+    display: flex;
+    position: relative;
+}
+
 .shelf-title-div {
     display: flex;
+    justify-content: center;
+    margin: 7px;
+}
+
+.bookShelf-form {
+    margin-top: 15px;
 }
 
 .myShelf-search {
     height: 25px;
-    width: 290px;
+    width: 240px;
     font-size: 14px;
+}
+
+@media screen and (min-width: 996px) {
+    .myShelf-search {
+        height: 30px;
+        width: 600px;
+        font-size: 14px;
+    }
 }
 
 .my-shelf {
@@ -308,6 +327,14 @@ p.title {
     height: var(--bottom-navbar-height);
     width: 100%;
     background-color: var(--secondary-color);
+}
+
+@media screen and (min-width: 996px) {
+    .navbar {
+        flex-direction: column;
+        width: 60px;
+        height: 100%;
+    }
 }
 
 .my-shelf-btn, .search-section-btn {
