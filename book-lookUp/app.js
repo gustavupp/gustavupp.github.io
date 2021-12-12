@@ -43,15 +43,40 @@ window.addEventListener("DOMContentLoaded", ()=>{
 //when DOM loads also fetch NY BestSeller list from api
 window.addEventListener("DOMContentLoaded", ()=> {
     const bestSellerUrl = `https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-nonfiction.json?api-key=${nyTimesApiKey}`;
-    
-    //check if the list has been fetched before, if so get it from local storage instead
+   
     if(localStorage.getItem("nyList")){
-        getIsbns(JSON.parse(localStorage.getItem("nyList")));
+        let lastFetchedDate = localStorage.getItem("Date");
+        let date = new Date;
+        date = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+            if(lastFetchedDate === date){
+                getIsbns(JSON.parse(localStorage.getItem("nyList")));
+            } else {
+                fetch(bestSellerUrl)
+                .then((fetchedData)=> fetchedData.json())
+                .then((parsedData) => {
+                    //get new date
+                    let date = new Date;
+                    date = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+                    
+                    //add list and date to local storage
+                    localStorage.setItem("nyList", JSON.stringify(parsedData));
+                    localStorage.setItem("Date", date);
+                    getIsbns(parsedData);
+                    })
+                .catch((error)=> console.log(error));
+            }
+          
     } else {
         fetch(bestSellerUrl)
         .then((fetchedData)=> fetchedData.json())
         .then((parsedData) => {
+            //get new date
+            let date = new Date;
+            date = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+            
+            //add list and date to local storage
             localStorage.setItem("nyList", JSON.stringify(parsedData));
+            localStorage.setItem("Date", date);
             getIsbns(parsedData);
             })
         .catch((error)=> console.log(error));
@@ -195,12 +220,14 @@ myShelf.addEventListener("click", (e)=> {
 
 //search filter on myshelf
 bookShelfForm.addEventListener("keyup", function() {
-    const inputValue = myShelfInput.value;
+    let inputValue = myShelfInput.value;
+    inputValue = inputValue.toLowerCase();
     let currentLocalstorage = getLocalStorage();
     if (inputValue) {
         currentLocalstorage = currentLocalstorage.filter((item)=> {
             let title = item.title;
             title = title.toLowerCase();
+        
             if(title.includes(inputValue)){ //had set it up intially with .startsWith() instead of .includes()
                 return item;
             }

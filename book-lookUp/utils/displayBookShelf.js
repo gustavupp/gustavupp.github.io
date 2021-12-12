@@ -4,7 +4,7 @@ import { myBookShelfCount } from "../app.js";
 
 
 function displayBookShelf(localStorageContent){
-    console.log(localStorageContent)
+    
     let localStorageList = localStorageContent;
 
     //quick setup to count the amount of books in the bookShelf
