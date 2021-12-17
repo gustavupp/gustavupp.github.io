@@ -157,6 +157,7 @@ li a {
     flex-direction: column;
     justify-content: flex-start;
     padding-bottom: 50px;
+    height: 100vh;
 }
 
 .about-content {
@@ -232,6 +233,7 @@ span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 .contact-container {
@@ -274,6 +276,7 @@ iframe {
 #menu {
     background-color: var(--lessDarkBlue);
     color: var(--notSoWhite);
+    height: 100vh;
 }
 
 hr {

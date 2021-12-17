@@ -35,12 +35,7 @@ let responseObject = [];
 export const googleApiKey = "AIzaSyACW9GJ7NQttkNzbCSFj-F5C2ORvM-8wxw";
 const nyTimesApiKey = "Xz8st6xWj2CFpfXmKxDgLaWe9pKSYPRA";
 
-//when the DOM loads, display booklist on local storage
-window.addEventListener("DOMContentLoaded", ()=>{
-    displayBookShelf(getLocalStorage());
-});
-
-//when DOM loads also fetch NY BestSeller list from api
+//when the DOM loads, display booklist on local storage, also fetch NY BestSeller list from api
 window.addEventListener("DOMContentLoaded", ()=> {
     const bestSellerUrl = `https://api.nytimes.com/svc/books/v3/lists/current/combined-print-and-e-book-nonfiction.json?api-key=${nyTimesApiKey}`;
    
@@ -81,7 +76,7 @@ window.addEventListener("DOMContentLoaded", ()=> {
             })
         .catch((error)=> console.log(error));
     }
-    
+    displayBookShelf(getLocalStorage()); //get my book shelf from local storage
 });
 
 //add event listeners to both bottom buttoms

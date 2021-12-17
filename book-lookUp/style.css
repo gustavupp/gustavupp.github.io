@@ -108,6 +108,18 @@ h1 {
     }
 }
 
+.loading-text {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    font-size: 20px;
+    display: none;
+}
+
+.show-loading {
+    display: block;
+}
+
 .card {
     display: flex;
     flex-direction: column;
