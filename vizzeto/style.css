@@ -152,13 +152,13 @@ li a {
 /*------- ABOUT-------*/
 
 #about {
+  display: flex;
   background-color: var(--lessDarkBlue);
   color: var(--notSoWhite);
   align-items: center;
   flex-direction: column;
-  justify-content: flex-start;
   padding-bottom: 50px;
-  min-height: 100vh;
+  height: 100%;
 }
 
 .about-content {
@@ -170,7 +170,7 @@ li a {
   max-width: 1150px;
   color: var(--Darkblue);
   width: 95vw;
-  margin-bottom: 30px;
+  margin: 50px 0;
 }
 
 span {
