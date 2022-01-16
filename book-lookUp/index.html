@@ -1,78 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="https://kit.fontawesome.com/9014f4e330.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/9014f4e330.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>Book Search</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="single-section">
-        <!-----TOP SECTION/SEARCH FORM---->
-        <div class="search-container">
-            <form action="submit">
-                <input class="search" type="text" placeholder="Search by Title, Author or ISBN">
-                <button class="search-btn">
-                    <i class="fas fa-search"></i>
-                </button>
+      <!-----TOP SECTION/SEARCH FORM---->
+      <div class="search-container">
+        <form action="submit">
+          <input
+            class="search"
+            type="text"
+            placeholder="Search by Title, Author or ISBN"
+          />
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <!---------MY BOOK SHELF--------->
+      <div class="my-shelf-wrapper-container">
+        <div class="myShelf-top-section">
+          <div class="title-and-search">
+            <form class="bookShelf-form">
+              <input
+                class="myShelf-search"
+                type="text"
+                placeholder="Search Your Shelf by Title"
+              />
             </form>
-        </div>
-        <!---------MY BOOK SHELF--------->
-        <div class="my-shelf-wrapper-container">
-            <div class="myShelf-top-section">
-                <div class="title-and-search">
-                    <form class="bookShelf-form">
-                        <input class="myShelf-search" type="text" placeholder="Search Your Shelf by Title">
-                    </form>
-                    <div class="shelf-title-div">
-                        <h1 class="myShelf-title" >My Shelf<span class="myShelf-book-count" style="font-size: 16px;"></span></h1>
-                    </div>
-                </div>
+            <div class="shelf-title-div">
+              <h1 class="myShelf-title">
+                My Shelf<span
+                  class="myShelf-book-count"
+                  style="font-size: 16px"
+                ></span>
+              </h1>
             </div>
-            <div class="my-shelf">
-                <!--content dynamically added-->
-            </div>
+          </div>
         </div>
-        
-        <!-----MODAL CONTAINER---->
-        <div class="book-modal">
-            <!--content dynamically added-->
+        <div class="my-shelf">
+          <!--content dynamically added-->
         </div>
+      </div>
 
-        <!-----BOOKS CONTAINER---->
-        <div class="card-container-wrapper">
-            <h1 class="results-title">Results</h1>
-            <div class="card-container">
-                <!--data dynamically inserted-->
-            </div>
+      <!-----MODAL CONTAINER---->
+      <div class="book-modal">
+        <!--content dynamically added-->
+      </div>
+
+      <!-----BOOKS CONTAINER---->
+      <div class="card-container-wrapper">
+        <h1 class="results-title">Results</h1>
+        <div class="card-container">
+          <!--data dynamically inserted-->
         </div>
-        
-        <div class="nyList-wrapper-container">
-            <h1 class="best-seller-title">Best Sellers</h1>
-            <div class="nyList-container">
-                <!--data dynamically inserted-->
-            </div>
+      </div>
+
+      <div class="nyList-wrapper-container">
+        <h1 class="best-seller-title">Best Sellers</h1>
+        <div class="nyList-container">
+          <!--data dynamically inserted-->
         </div>
-        
-        
-        <!-----BOTTOM NAVBAR---->
-        <nav class="navbar">
-            <button class="my-shelf-btn">
-                <i class="fas fa-book"></i>
-                <p style="margin-top: -5px; font-size: 13px;">Shelf</p>
-            </button>
-            <button class="search-section-btn">
-                <i class="far fa-plus-square"></i>
-                <p style="margin-top: -5px; font-size: 13px;">Search</p>
-            </button>
-        </nav>
+      </div>
+
+      <!-----BOTTOM NAVBAR---->
+      <nav class="navbar">
+        <button class="my-shelf-btn">
+          <i class="fas fa-book"></i>
+          <p style="margin-top: -5px; font-size: 13px">Shelf</p>
+        </button>
+        <button class="search-section-btn">
+          <i class="far fa-plus-square"></i>
+          <p style="margin-top: -5px; font-size: 13px">Search</p>
+        </button>
+      </nav>
     </section>
 
     <script type="module" src="app.js"></script>
-</body>
+  </body>
 </html>
