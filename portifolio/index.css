@@ -180,6 +180,7 @@ ul li a:hover {
 }
 
 #mode {
+  position: relative;
   height: 30px;
   width: 80px;
   margin: 10px 20px;
@@ -189,7 +190,43 @@ ul li a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+  /*inner ball goes back and forth*/
+  /*inner text goes back and forth*/
+}
+
+#mode #switch {
+  cursor: pointer;
+  height: 26px;
+  width: 26px;
+  margin: 2px 2px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+#mode .switch-active {
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+}
+
+#mode #inner-text {
+  font-size: 15px;
+  top: 3px;
+  right: 10px;
+  color: var(--primary-color);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  position: absolute;
+}
+
+#mode .inner-text-active {
+  -webkit-transform: translateX(-26px);
+          transform: translateX(-26px);
 }
 
 @media screen and (min-width: 896px) {
@@ -252,6 +289,14 @@ ul li a:hover {
 
 .sidebar #mode-sidebar {
   position: relative;
+  height: 30px;
+  width: 80px;
+  margin: 40px 20px 0 0px;
+  background: var(--secondary-color);
+  border-radius: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /*inner ball goes back and forth*/
   /*inner text goes back and forth*/
 }
@@ -271,6 +316,7 @@ ul li a:hover {
 
 .sidebar #mode-sidebar #inner-text-sidebar {
   font-size: 15px;
+  top: 3px;
   right: 10px;
   color: var(--primary-color);
   -webkit-transition: -webkit-transform 0.5s;
@@ -278,6 +324,16 @@ ul li a:hover {
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
   position: absolute;
+}
+
+.sidebar #mode-sidebar .switch-active-sidebar {
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+}
+
+.sidebar #mode-sidebar .inner-text-active-sidebar {
+  -webkit-transform: translateX(-26px);
+          transform: translateX(-26px);
 }
 
 .sidebar.show-sidebar {
@@ -309,46 +365,6 @@ ul li a:hover {
 }
 
 /***************** END SIDEBAR******************/
-#mode {
-  position: relative;
-  /*inner ball goes back and forth*/
-  /*inner text goes back and forth*/
-}
-
-#mode #switch {
-  cursor: pointer;
-  height: 26px;
-  width: 26px;
-  margin: 2px 2px;
-  background: var(--primary-color);
-  border-radius: 50%;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
-}
-
-#mode .switch-active {
-  -webkit-transform: translateX(50px);
-          transform: translateX(50px);
-}
-
-#mode #inner-text {
-  font-size: 15px;
-  right: 10px;
-  color: var(--primary-color);
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
-  position: absolute;
-}
-
-#mode .Inner-text-active {
-  -webkit-transform: translateX(-26px);
-          transform: translateX(-26px);
-}
-
 /* ---main--- */
 .main {
   min-height: 90vh;
@@ -617,6 +633,7 @@ span {
   color: var(--main-color);
 }
 
+/*******GLOBAL STYLES******/
 * {
   margin: 0;
   padding: 0;

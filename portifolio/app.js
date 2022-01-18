@@ -1,16 +1,32 @@
-//function to activate darkMode
-const mode_icon = document.getElementById('mode')
-const switch_Mode = document.getElementById('switch')
-const inner_text = document.getElementById('inner-text')
+//function to activate light mode
+const modeIcon = document.getElementById('mode')
+const switchMode = document.getElementById('switch')
+const innerText = document.getElementById('inner-text')
 
-mode_icon.onclick = function () {
+modeIcon.onclick = function () {
   document.body.classList.toggle('light-mode')
-  switch_Mode.classList.toggle('switch-active')
-  inner_text.classList.toggle('Inner-text-active')
+  switchMode.classList.toggle('switch-active')
+  innerText.classList.toggle('inner-text-active')
   if (document.body.classList.contains('light-mode')) {
-    inner_text.innerHTML = 'Dark'
+    innerText.innerHTML = 'Dark'
   } else {
-    inner_text.innerHTML = 'Light'
+    innerText.innerHTML = 'Light'
+  }
+}
+
+// function to activate the sidebar light mode
+const modeIconSidebar = document.getElementById('mode-sidebar')
+const switchModeSidebar = document.getElementById('switch-sidebar')
+const innerTextSidebar = document.getElementById('inner-text-sidebar')
+
+modeIconSidebar.onclick = function () {
+  document.body.classList.toggle('light-mode')
+  switchModeSidebar.classList.toggle('switch-active-sidebar')
+  innerTextSidebar.classList.toggle('inner-text-active-sidebar')
+  if (document.body.classList.contains('light-mode')) {
+    innerTextSidebar.innerHTML = 'Dark'
+  } else {
+    innerTextSidebar.innerHTML = 'Light'
   }
 }
 
@@ -20,6 +36,11 @@ const toggleBtn = document.querySelector('.toggle-bars')
 
 toggleBtn.addEventListener('click', function () {
   sidebar.classList.toggle('show-sidebar')
+  if (sidebar.classList.contains('show-sidebar')) {
+    modeContainer.innerHTML = ''
+    sidebarModeContainer.innerHTML = modeButton
+    console.log(sidebarModeContainer)
+  }
 })
 
 //close sidebar if window's inner width > 896px

@@ -74,6 +74,7 @@ ul li a:hover {
 }
 
 #mode {
+  position: relative;
   height: 30px;
   width: 80px;
   margin: 10px 20px;
@@ -81,7 +82,35 @@ ul li a:hover {
   border-radius: 15px;
   display: none;
   align-items: center;
-  position: relative;
+
+  #switch {
+    cursor: pointer;
+    height: 26px;
+    width: 26px;
+    margin: 2px 2px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transition: transform 0.5s;
+  }
+
+  /*inner ball goes back and forth*/
+  .switch-active {
+    transform: translateX(50px);
+  }
+
+  #inner-text {
+    font-size: 15px;
+    top: 3px;
+    right: 10px;
+    color: var(--primary-color);
+    transition: transform 0.5s;
+    position: absolute;
+  }
+
+  /*inner text goes back and forth*/
+  .inner-text-active {
+    transform: translateX(-26px);
+  }
 }
 
 @media screen and (min-width: 896px) {
@@ -132,6 +161,12 @@ ul li a:hover {
 
   #mode-sidebar {
     position: relative;
+    height: 30px;
+    width: 80px;
+    margin: 40px 20px 0 0px;
+    background: var(--secondary-color);
+    border-radius: 15px;
+    align-items: center;
 
     #switch-sidebar {
       cursor: pointer;
@@ -143,23 +178,24 @@ ul li a:hover {
       transition: transform 0.5s;
     }
 
-    /*inner ball goes back and forth*/
-    // .switch-active-sidebar {
-    //   transform: translateX(50px);
-    // }
-
     #inner-text-sidebar {
       font-size: 15px;
+      top: 3px;
       right: 10px;
       color: var(--primary-color);
       transition: transform 0.5s;
       position: absolute;
     }
 
+    /*inner ball goes back and forth*/
+    .switch-active-sidebar {
+      transform: translateX(50px);
+    }
+
     /*inner text goes back and forth*/
-    // .Inner-text-active-sidebar {
-    //   transform: translateX(-26px);
-    // }
+    .inner-text-active-sidebar {
+      transform: translateX(-26px);
+    }
   }
 }
 
@@ -190,37 +226,6 @@ ul li a:hover {
 }
 
 /***************** END SIDEBAR******************/
-#mode {
-  position: relative;
-
-  #switch {
-    cursor: pointer;
-    height: 26px;
-    width: 26px;
-    margin: 2px 2px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    transition: transform 0.5s;
-  }
-
-  /*inner ball goes back and forth*/
-  .switch-active {
-    transform: translateX(50px);
-  }
-
-  #inner-text {
-    font-size: 15px;
-    right: 10px;
-    color: var(--primary-color);
-    transition: transform 0.5s;
-    position: absolute;
-  }
-
-  /*inner text goes back and forth*/
-  .Inner-text-active {
-    transform: translateX(-26px);
-  }
-}
 
 /* ---main--- */
 .main {
