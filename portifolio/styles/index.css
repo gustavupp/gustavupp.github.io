@@ -124,7 +124,8 @@ nav {
 }
 
 #logo-img {
-  height: 40px;
+  min-width: 80px;
+  max-width: 150px;
   cursor: pointer;
 }
 
