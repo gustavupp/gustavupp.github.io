@@ -115,6 +115,7 @@ ul li a:hover {
 
 .sidebar {
   transform: translateX(-100%);
+  // opacity: 0;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -126,13 +127,47 @@ ul li a:hover {
   height: 100vh;
   z-index: 999;
   padding: 20px;
-  background: var(--secondary-color);
-  transition: 0.5s;
+  background: var(--primary-color);
+  transition: ease-in-out 0.5s;
+
+  #mode-sidebar {
+    position: relative;
+
+    #switch-sidebar {
+      cursor: pointer;
+      height: 26px;
+      width: 26px;
+      margin: 2px 2px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      transition: transform 0.5s;
+    }
+
+    /*inner ball goes back and forth*/
+    // .switch-active-sidebar {
+    //   transform: translateX(50px);
+    // }
+
+    #inner-text-sidebar {
+      font-size: 15px;
+      right: 10px;
+      color: var(--primary-color);
+      transition: transform 0.5s;
+      position: absolute;
+    }
+
+    /*inner text goes back and forth*/
+    // .Inner-text-active-sidebar {
+    //   transform: translateX(-26px);
+    // }
+  }
 }
 
 .sidebar.show-sidebar {
   transform: translateX(0);
+  // opacity: 1;
   transition: 0.5s;
+  box-shadow: 2px 1px 8px var(--hover-color);
 }
 
 .sidebar ul {
@@ -151,37 +186,40 @@ ul li a:hover {
 
 .sidebar ul li a {
   cursor: pointer;
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 /***************** END SIDEBAR******************/
+#mode {
+  position: relative;
 
-#switch {
-  cursor: pointer;
-  height: 26px;
-  width: 26px;
-  margin: 2px 2px;
-  background: var(--primary-color);
-  border-radius: 50%;
-  transition: transform 0.5s;
-}
+  #switch {
+    cursor: pointer;
+    height: 26px;
+    width: 26px;
+    margin: 2px 2px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transition: transform 0.5s;
+  }
 
-/*inner ball goes back and forth*/
-.switch-active {
-  transform: translateX(50px);
-}
+  /*inner ball goes back and forth*/
+  .switch-active {
+    transform: translateX(50px);
+  }
 
-#inner-text {
-  font-size: 15px;
-  right: 10px;
-  color: var(--primary-color);
-  transition: transform 0.5s;
-  position: absolute;
-}
+  #inner-text {
+    font-size: 15px;
+    right: 10px;
+    color: var(--primary-color);
+    transition: transform 0.5s;
+    position: absolute;
+  }
 
-/*inner text goes back and forth*/
-.Inner-text-active {
-  transform: translateX(-26px);
+  /*inner text goes back and forth*/
+  .Inner-text-active {
+    transform: translateX(-26px);
+  }
 }
 
 /* ---main--- */

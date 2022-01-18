@@ -1,5 +1,5 @@
-.projects {
-  @extend .about;
+#projects {
+  @extend #about;
 
   .project-wrapper {
     display: flex;

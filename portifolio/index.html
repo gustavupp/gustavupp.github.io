@@ -26,23 +26,24 @@
   <body>
     <!--------------------------------------HOME------------------------------------->
     <!------------NAVBAR------------->
-    <section class="home">
+    <section id="home">
       <nav>
         <div class="logo">
-          <a href="#" id="logo-text"
+          <a href="#home" id="logo-text"
             ><img src="img/Logo.png" alt="" id="logo-img"
           /></a>
         </div>
 
         <div class="list-div">
           <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href=".about">ABOUT</a></li>
-            <li><a href="#">PROJECTS</a></li>
-            <li><a href="#">CONTACT ME</a></li>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
           </ul>
         </div>
 
+        <!--light mode-->
         <div id="mode">
           <div id="switch"></div>
           <label id="inner-text">Light</label>
@@ -58,18 +59,24 @@
       <!---------------SIDEBAR------------------->
       <aside class="sidebar">
         <div class="logo">
-          <a href="#" id="logo-text"
+          <a href="#home" id="logo-text"
             ><img src="./img/logo.png" alt="" id="logo-img"
           /></a>
           <!-- <a href="#" id="logo-text">gusdev</a> -->
         </div>
 
-        <ul>
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">PORTFOLIO</a></li>
-          <li><a href="#">CONTACT ME</a></li>
+        <ul class="menu-ul">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
         </ul>
+
+        <!--light mode-->
+        <div id="mode-sidebar">
+          <div id="switch-sidebar"></div>
+          <label id="inner-text-sidebar">Light</label>
+        </div>
       </aside>
 
       <!------------------HERO---------------->
@@ -102,7 +109,7 @@
     </section>
 
     <!------------------------------ABOUT------------------------------------>
-    <section class="about">
+    <section id="about">
       <h1>WHO <span>AM I?</span></h1>
       <div class="about-wrapper">
         <!--ABOUT PHOTO-->
@@ -130,7 +137,7 @@
     </section>
 
     <!------------------------------PROJECTS------------------------------------>
-    <section class="projects">
+    <section id="projects">
       <h1 style="margin-bottom: 20px">MY<span> PROJECTS</span></h1>
       <div class="project-wrapper">
         <!-----------INDIVIDUAL PROJECTS------------>
@@ -175,7 +182,7 @@
     </section>
 
     <!------------------------------CONTACT------------------------------------>
-    <section class="contact">
+    <section id="contact">
       <h1 style="margin-bottom: 20px">CONTACT<span> ME</span></h1>
       <div class="contact-wrapper">
         <p>

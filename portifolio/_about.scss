@@ -1,4 +1,4 @@
-.about {
+#about {
   text-align: center;
   margin: auto;
   margin-bottom: 40px;
@@ -20,7 +20,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width: 500px;
+      max-width: 450px;
       width: 70vw;
       margin: 40px 0;
 
@@ -31,7 +31,7 @@
           width: 100%;
           border-radius: 8px;
           box-shadow: 2px 4px 8px rgb(26, 26, 26);
-          transform: rotateX(15deg) rotateY(-30deg) rotateZ(5deg);
+          transform: rotateX(15deg) rotateY(-27deg) rotateZ(5deg);
           transition: 1s;
 
           &:hover {
@@ -42,13 +42,15 @@
     }
 
     .about-content {
-      max-width: 700px;
+      text-align: justify;
+      max-width: 550px;
     }
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1100px) {
     .about-wrapper {
       flex-direction: row-reverse;
+      gap: 40px;
     }
   }
 }

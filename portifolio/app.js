@@ -26,3 +26,12 @@ toggleBtn.addEventListener('click', function () {
 window.addEventListener('resize', function () {
   if (window.innerWidth > 896) sidebar.classList.remove('show-sidebar')
 })
+
+//close sidebar when li is clicked
+const sidebarUl = sidebar.querySelectorAll('li')
+
+sidebarUl.forEach((li) =>
+  li.addEventListener('click', function () {
+    sidebar.classList.remove('show-sidebar')
+  })
+)
