@@ -1,0 +1,32 @@
+.contact {
+  @extend .about;
+
+  .contact-wrapper {
+    p {
+      margin-bottom: 40px;
+    }
+
+    form {
+      textarea {
+        @extend input;
+        height: 150px !important;
+      }
+      input {
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+        padding-left: 10px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid var(--secondary-color);
+        height: 34px;
+        background-color: transparent;
+      }
+
+      button {
+        @extend .contact-me-btn;
+        width: 100%;
+        margin-top: 0 !important;
+      }
+    }
+  }
+}

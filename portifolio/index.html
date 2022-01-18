@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c1d4c8f89c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>My Portifolio</title>
+  </head>
+  <body>
+    <!--------------------------------------HOME------------------------------------->
+    <!------------NAVBAR------------->
+    <section class="home">
+      <nav>
+        <div class="logo">
+          <a href="#" id="logo-text"
+            ><img src="img/Logo.png" alt="" id="logo-img"
+          /></a>
+        </div>
+
+        <div class="list-div">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href=".about">ABOUT</a></li>
+            <li><a href="#">PROJECTS</a></li>
+            <li><a href="#">CONTACT ME</a></li>
+          </ul>
+        </div>
+
+        <div id="mode">
+          <div id="switch"></div>
+          <label id="inner-text">Light</label>
+        </div>
+
+        <div class="toggle-bar-container">
+          <button type="button" class="toggle-bars">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!---------------SIDEBAR------------------->
+      <aside class="sidebar">
+        <div class="logo">
+          <a href="#" id="logo-text"
+            ><img src="./img/logo.png" alt="" id="logo-img"
+          /></a>
+          <!-- <a href="#" id="logo-text">gusdev</a> -->
+        </div>
+
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">PORTFOLIO</a></li>
+          <li><a href="#">CONTACT ME</a></li>
+        </ul>
+      </aside>
+
+      <!------------------HERO---------------->
+      <div class="main">
+        <div class="left-column">
+          <div class="img-box">
+            <img src="./img/Portrait.png" alt="portrait" class="img-main" />
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="content">
+            <h1>HEY. I'M <span>GUS</span></h1>
+            <p>
+              A <span>Web Developer</span> passionate about <br />
+              coding and creating interactive applications and experiences on
+              the web
+            </p>
+
+            <button type="button" class="contact-me-btn">Get In Touch!</button>
+
+            <div class="social-link">
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!------------------------------ABOUT------------------------------------>
+    <section class="about">
+      <h1>WHO <span>AM I?</span></h1>
+      <div class="about-wrapper">
+        <!--ABOUT PHOTO-->
+        <div class="about-photo-container">
+          <figure>
+            <img src="./img/us.jpg" alt="portrait" class="about-img-main" />
+          </figure>
+        </div>
+
+        <!--ABOUT CONTENT-->
+        <article class="about-content">
+          <p>
+            I'm a <span>Web Developer</span> based in Brisbane, Australia.
+            Passionate about all things coding.
+          </p>
+          <p>
+            I love to solve codeWars problems, I am very independent and
+            attentive to detail. Curious by nature, verocious reader, Brazilian
+            Jiu-Jitsu, portrait drawing, love to learn about how to learn
+            anything faster and more efficiently and a bunch of other things
+          </p>
+          <p>A family person and a father of a bright little girl</p>
+        </article>
+      </div>
+    </section>
+
+    <!------------------------------PROJECTS------------------------------------>
+    <section class="projects">
+      <h1 style="margin-bottom: 20px">MY<span> PROJECTS</span></h1>
+      <div class="project-wrapper">
+        <!-----------INDIVIDUAL PROJECTS------------>
+        <div class="individual-project">
+          <img src="./img/ecommerce.png" alt="ecommerce" />
+          <div class="project-info">
+            <h2>Asil eCommerce</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
+              voluptatem adipisci pariatur odit cum velit ipsam non qui id!
+              Laudantium magni expedita accusantium iure pariatur.
+            </p>
+          </div>
+        </div>
+
+        <!-----------INDIVIDUAL PROJECTS------------>
+        <div class="individual-project odd">
+          <img src="./img/bookshelf.png" alt="bookshekf" />
+          <div class="project-info">
+            <h2>My Bookshelf</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
+              voluptatem adipisci pariatur odit cum velit ipsam non qui id!
+              Laudantium magni expedita accusantium iure pariatur.
+            </p>
+          </div>
+        </div>
+
+        <!-----------INDIVIDUAL PROJECTS------------>
+        <div class="individual-project">
+          <img src="./img/vizzeto.png" alt="pizzeria" />
+          <div class="project-info">
+            <h2>Vizzeto Woodfire</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
+              voluptatem adipisci pariatur odit cum velit ipsam non qui id!
+              Laudantium magni expedita accusantium iure pariatur.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!------------------------------CONTACT------------------------------------>
+    <section class="contact">
+      <h1 style="margin-bottom: 20px">CONTACT<span> ME</span></h1>
+      <div class="contact-wrapper">
+        <p>
+          Thanks for taking the time to reach out. How can I help you today?
+        </p>
+        <form>
+          <div>
+            <input placeholder="Name" type="text" />
+          </div>
+          <div>
+            <input placeholder="Email" type="email" />
+          </div>
+          <div>
+            <input placeholder="Subject" type="text" />
+          </div>
+          <div>
+            <textarea placeholder="Message"></textarea>
+          </div>
+          <button type="submit">SEND MESSAGE</button>
+        </form>
+      </div>
+    </section>
+
+    <!------------------------------------footer---------------------------------------->
+    <footer class="footer">
+      <p>
+        © 2022 <img src="./img/logo.png" alt="" id="logo-img" />. All Rights
+        Reserved
+      </p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

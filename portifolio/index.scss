@@ -1,0 +1,39 @@
+/***IMPORTS****/
+@import './about';
+@import './home';
+@import './projects';
+@import './contact';
+@import './footer';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+:root {
+  --main-color: #6c56e1;
+  --secondary-color: #edf2fc;
+  --primary-color: #212121;
+  --nav-color: #6c56e1;
+  --nav-text-color: #edf2fc;
+  --hover-color: #c0b4cf;
+}
+
+.light-mode {
+  --secondary-color: #212121;
+  --primary-color: #edf2fc;
+  --nav-color: #edf2fc;
+  --nav-text-color: #6c56e1;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transition: 1s;
+}
