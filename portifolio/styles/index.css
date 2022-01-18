@@ -179,6 +179,20 @@ ul li a:hover {
   color: var(--hover-color);
 }
 
+.cv {
+  margin-top: 0 !important;
+  padding: 10px !important;
+}
+
+.cv i {
+  vertical-align: middle;
+  margin-right: 10px;
+  font-size: 23px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/******LIGHT MODE*****/
 #mode {
   position: relative;
   height: 30px;
@@ -285,6 +299,7 @@ ul li a:hover {
   background: var(--primary-color);
   -webkit-transition: ease-in-out 0.5s;
   transition: ease-in-out 0.5s;
+  /**light mode sidebar**/
 }
 
 .sidebar #mode-sidebar {
@@ -299,6 +314,19 @@ ul li a:hover {
           align-items: center;
   /*inner ball goes back and forth*/
   /*inner text goes back and forth*/
+}
+
+.sidebar #mode-sidebar .cv {
+  margin-top: 0 !important;
+  padding: 10px !important;
+}
+
+.sidebar #mode-sidebar .cv i {
+  vertical-align: middle;
+  margin-right: 10px;
+  font-size: 23px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .sidebar #mode-sidebar #switch-sidebar {
@@ -475,7 +503,8 @@ span {
   color: var(--main-color);
 }
 
-.contact-me-btn, #contact .contact-wrapper form button {
+.contact-me-btn, .cv, .sidebar #mode-sidebar .cv, #contact .contact-wrapper form button {
+  display: inline-block;
   cursor: pointer;
   color: white;
   text-decoration: none;
@@ -488,7 +517,7 @@ span {
   transition: 1s;
 }
 
-.contact-me-btn:hover, #contact .contact-wrapper form button:hover {
+.contact-me-btn:hover, .cv:hover, .sidebar #mode-sidebar .cv:hover, #contact .contact-wrapper form button:hover {
   background: var(--secondary-color);
   color: var(--primary-color);
 }
@@ -534,14 +563,14 @@ span {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 100px;
   gap: 30px;
 }
 
 #projects .project-wrapper .individual-project img {
   cursor: pointer;
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   border-radius: 8px;
   -webkit-box-shadow: 2px 4px 8px #1a1a1a;
           box-shadow: 2px 4px 8px #1a1a1a;
@@ -556,7 +585,7 @@ span {
 
 #projects .project-wrapper .individual-project .project-info {
   text-align: justify;
-  max-width: 450px;
+  max-width: 400px;
 }
 
 #projects .project-wrapper .individual-project .project-info h2 {
@@ -569,7 +598,7 @@ span {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 40px;
+    gap: 60px;
   }
   #projects .project-wrapper .odd {
     -webkit-box-orient: horizontal;
@@ -622,15 +651,9 @@ span {
   font-weight: 400;
 }
 
-.footer p img {
-  width: 120px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  vertical-align: middle;
-}
-
 .footer p span {
   color: var(--main-color);
+  font-weight: 700;
 }
 
 /*******GLOBAL STYLES******/

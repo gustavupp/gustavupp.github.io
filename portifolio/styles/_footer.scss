@@ -9,14 +9,9 @@
     color: var(--primary-color);
     font-weight: 400;
 
-    img {
-      width: 120px;
-      object-fit: contain;
-      vertical-align: middle;
-    }
-
     span {
       color: var(--main-color);
+      font-weight: 700;
     }
   }
 }

@@ -73,6 +73,21 @@ ul li a:hover {
   color: var(--hover-color);
 }
 
+.cv {
+  @extend .contact-me-btn;
+  margin-top: 0 !important;
+  padding: 10px !important;
+
+  i {
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 23px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
+
+/******LIGHT MODE*****/
 #mode {
   position: relative;
   height: 30px;
@@ -159,6 +174,7 @@ ul li a:hover {
   background: var(--primary-color);
   transition: ease-in-out 0.5s;
 
+  /**light mode sidebar**/
   #mode-sidebar {
     position: relative;
     height: 30px;
@@ -167,6 +183,20 @@ ul li a:hover {
     background: var(--secondary-color);
     border-radius: 15px;
     align-items: center;
+
+    .cv {
+      @extend .contact-me-btn;
+      margin-top: 0 !important;
+      padding: 10px !important;
+
+      i {
+        vertical-align: middle;
+        margin-right: 10px;
+        font-size: 23px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+    }
 
     #switch-sidebar {
       cursor: pointer;
@@ -315,6 +345,7 @@ span {
 }
 
 .contact-me-btn {
+  display: inline-block;
   cursor: pointer;
   color: white;
   text-decoration: none;
