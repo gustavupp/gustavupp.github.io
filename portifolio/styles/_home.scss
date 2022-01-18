@@ -1,5 +1,7 @@
 /* -----navbar----- */
 nav {
+  z-index: 999;
+  background: var(--primary-color);
   max-width: 1300px;
   width: 100%;
   height: 10vh;
@@ -8,11 +10,18 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
+  transition: 1s;
 }
 
-@media screen and (min-width: 996px) {
+.fixed {
+  position: fixed;
+}
+
+@media screen and (min-width: 896px) {
   nav {
     justify-content: space-between;
+    position: static;
+    z-index: 1;
   }
 }
 
@@ -261,7 +270,6 @@ ul li a:hover {
 /* ---main--- */
 .main {
   min-height: 90vh;
-  /* padding: 50px 0 50px 0; */
   display: flex;
   flex-direction: column;
   align-items: center;

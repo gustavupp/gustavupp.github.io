@@ -33,19 +33,17 @@ modeIconSidebar.onclick = function () {
 //toggle sidebar
 const sidebar = document.querySelector('.sidebar')
 const toggleBtn = document.querySelector('.toggle-bars')
+const navbar = document.querySelector('.navbar')
 
 toggleBtn.addEventListener('click', function () {
   sidebar.classList.toggle('show-sidebar')
-  if (sidebar.classList.contains('show-sidebar')) {
-    modeContainer.innerHTML = ''
-    sidebarModeContainer.innerHTML = modeButton
-    console.log(sidebarModeContainer)
-  }
 })
 
 //close sidebar if window's inner width > 896px
 window.addEventListener('resize', function () {
-  if (window.innerWidth > 896) sidebar.classList.remove('show-sidebar')
+  if (window.innerWidth > 896) {
+    sidebar.classList.remove('show-sidebar')
+  }
 })
 
 //close sidebar when li is clicked
@@ -56,3 +54,40 @@ sidebarUl.forEach((li) =>
     sidebar.classList.remove('show-sidebar')
   })
 )
+
+//get current year
+const date = (document.getElementById('date').innerHTML =
+  new Date().getFullYear())
+
+//make navbar fixed after scrolling down the height of navbar
+window.addEventListener('scroll', () => {
+  const home = document.getElementById('home')
+  const homeHeight = home.getBoundingClientRect().height
+
+  if (window.pageYOffset > homeHeight / 2) {
+    navbar.classList.add('fixed')
+  } else {
+    navbar.classList.remove('fixed')
+  }
+})
+
+//get position of TAGS when navbar fixed navbar
+const scrollLinks = document.querySelectorAll('.scroll-links')
+
+scrollLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    //get cliked link
+    const elementId = e.currentTarget.getAttribute('href').slice(1)
+    const element = document.getElementById(elementId)
+
+    //get navbar height
+    const navbarHeight = navbar.getBoundingClientRect().height
+
+    //scroll to element height - navbar height
+    window.scrollTo({
+      top: element.offsetTop - navbarHeight,
+    })
+  })
+})
