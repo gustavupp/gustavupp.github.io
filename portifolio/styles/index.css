@@ -47,7 +47,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  max-width: 450px;
+  max-width: 500px;
   width: 70vw;
   margin: 40px 0;
 }
@@ -629,6 +629,7 @@ span {
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
   background: transparent;
+  color: var(--secondary-color);
   border-style: solid;
   padding: 5px 10px;
 }
