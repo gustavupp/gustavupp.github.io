@@ -18,7 +18,7 @@
         width: 100%;
         max-width: 400px;
         border-radius: 8px;
-        box-shadow: 2px 4px 8px rgb(26, 26, 26);
+        box-shadow: 2px 2px 8px rgb(26, 26, 26);
         margin-top: 20px;
         transition: 0.3s;
 
@@ -36,14 +36,32 @@
 
         .technologies-container {
           display: flex;
-          justify-content: center;
+          justify-content: left;
           margin-top: 25px;
 
           .technologies {
             li {
               display: inline-block;
-              font-size: 50px;
-              margin-right: 25px;
+              font-size: 40px;
+              margin: 0 20px;
+            }
+          }
+        }
+
+        .project-btns {
+          display: flex;
+          justify-content: left;
+
+          a {
+            @extend .contact-me-btn;
+            transform: scale(0.8);
+            background: transparent;
+            //color: var(--main-color);
+            border-style: solid;
+            padding: 5px 10px;
+
+            &::after {
+              content: ' >';
             }
           }
         }

@@ -511,7 +511,7 @@ span {
   color: var(--main-color);
 }
 
-.contact-me-btn, .cv, .sidebar #mode-sidebar .cv, #contact .contact-wrapper form button {
+.contact-me-btn, .cv, .sidebar #mode-sidebar .cv, #projects .project-wrapper .individual-project .project-info .project-btns a, #contact .contact-wrapper form button {
   display: inline-block;
   cursor: pointer;
   color: white;
@@ -525,7 +525,7 @@ span {
   transition: 1s;
 }
 
-.contact-me-btn:hover, .cv:hover, .sidebar #mode-sidebar .cv:hover, #contact .contact-wrapper form button:hover {
+.contact-me-btn:hover, .cv:hover, .sidebar #mode-sidebar .cv:hover, #projects .project-wrapper .individual-project .project-info .project-btns a:hover, #contact .contact-wrapper form button:hover {
   background: var(--secondary-color);
   color: var(--primary-color);
 }
@@ -580,8 +580,8 @@ span {
   width: 100%;
   max-width: 400px;
   border-radius: 8px;
-  -webkit-box-shadow: 2px 4px 8px #1a1a1a;
-          box-shadow: 2px 4px 8px #1a1a1a;
+  -webkit-box-shadow: 2px 2px 8px #1a1a1a;
+          box-shadow: 2px 2px 8px #1a1a1a;
   margin-top: 20px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -604,16 +604,37 @@ span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   margin-top: 25px;
 }
 
 #projects .project-wrapper .individual-project .project-info .technologies-container .technologies li {
   display: inline-block;
-  font-size: 50px;
-  margin-right: 25px;
+  font-size: 40px;
+  margin: 0 20px;
+}
+
+#projects .project-wrapper .individual-project .project-info .project-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+#projects .project-wrapper .individual-project .project-info .project-btns a {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  background: transparent;
+  border-style: solid;
+  padding: 5px 10px;
+}
+
+#projects .project-wrapper .individual-project .project-info .project-btns a::after {
+  content: ' >';
 }
 
 @media screen and (min-width: 996px) {
