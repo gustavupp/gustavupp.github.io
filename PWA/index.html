@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/9014f4e330.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="icons/apple-icon-180.png" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <section class="form-container">
+      <!--form-->
+      <form action="submit" class="todo-form">
+        <p class="alert">invisible alert</p>
+        <h3 class="todo-form" style="padding: 14px 0; font-size: 18px">
+          Jot Down What You Need!
+        </h3>
+        <div class="form">
+          <input
+            type="text"
+            id="input-text"
+            placeholder="e.g. do more Js exercises"
+          />
+          <button type="submit" class="submit-btn btn">SUBMIT</button>
+        </div>
+        <br />
+      </form>
+      <!--items list-->
+      <div class="todo-container">
+        <div class="todo-items">
+          <!--CONTENT DYNAMICALLY ADDED-->
+        </div>
+        <button class="clear-btn btn">CLEAR</button>
+      </div>
+      <div class="modal-div">
+        <div class="modal-container">
+          <p class="modal-title" style="margin-top: 20px">
+            Are you sure you want to delete all items?
+          </p>
+          <br />
+          <div class="modal-btns">
+            <button class="yes btn">YES</button>
+            <button class="no btn">NO</button>
+          </div>
+          <br />
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+      }
+    </script>
+  </body>
+</html>
