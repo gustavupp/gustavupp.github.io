@@ -1,27 +1,28 @@
-/* -----navbar----- */
-nav {
-  z-index: 999;
-  background: var(--primary-color);
-  max-width: 1300px;
+#home {
+  padding-top: 10vh;
   width: 100%;
-  height: 10vh;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 30px;
-  transition: 1s;
-}
-
-.fixed {
-  position: fixed;
-}
-
-@media screen and (min-width: 896px) {
+  /* -----navbar----- */
   nav {
+    background: var(--primary-color);
+    width: 100%;
+    //max-width: 1300px;
+    height: 10vh;
+    margin: 0 auto;
+    display: flex;
     justify-content: space-between;
-    position: static;
-    z-index: 1;
+    align-items: center;
+    padding: 0 30px;
+    transition: 1s;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 999;
+  }
+
+  @media screen and (min-width: 896px) {
+    nav {
+      justify-content: space-between;
+    }
   }
 }
 
@@ -61,7 +62,6 @@ nav {
 }
 
 ul {
-  flex: 1;
   text-align: right;
   list-style: none;
 }

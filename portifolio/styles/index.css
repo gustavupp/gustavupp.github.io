@@ -88,14 +88,17 @@
   }
 }
 
-/* -----navbar----- */
-nav {
-  z-index: 999;
+#home {
+  padding-top: 10vh;
+  width: 100%;
+  /* -----navbar----- */
+}
+
+#home nav {
   background: var(--primary-color);
-  max-width: 1300px;
   width: 100%;
   height: 10vh;
-  margin: auto;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,19 +111,17 @@ nav {
   padding: 0 30px;
   -webkit-transition: 1s;
   transition: 1s;
-}
-
-.fixed {
+  top: 0;
+  left: 0;
   position: fixed;
+  z-index: 999;
 }
 
 @media screen and (min-width: 896px) {
-  nav {
+  #home nav {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    position: static;
-    z-index: 1;
   }
 }
 
@@ -165,9 +166,6 @@ nav {
 }
 
 ul {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   text-align: right;
   list-style: none;
 }
@@ -602,6 +600,22 @@ span {
   margin-bottom: 10px;
 }
 
+#projects .project-wrapper .individual-project .project-info .technologies-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px;
+}
+
+#projects .project-wrapper .individual-project .project-info .technologies-container .technologies li {
+  display: inline-block;
+  font-size: 50px;
+  margin-right: 25px;
+}
+
 @media screen and (min-width: 996px) {
   #projects .project-wrapper .individual-project {
     -webkit-box-orient: horizontal;
@@ -701,5 +715,12 @@ body {
   color: var(--secondary-color);
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+.underline {
+  width: 100px;
+  height: 2px;
+  background: var(--main-color);
+  margin-bottom: 50px;
 }
 /*# sourceMappingURL=index.css.map */

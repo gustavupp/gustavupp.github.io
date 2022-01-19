@@ -33,6 +33,20 @@
         h2 {
           margin-bottom: 10px;
         }
+
+        .technologies-container {
+          display: flex;
+          justify-content: center;
+          margin-top: 25px;
+
+          .technologies {
+            li {
+              display: inline-block;
+              font-size: 50px;
+              margin-right: 25px;
+            }
+          }
+        }
       }
     }
 

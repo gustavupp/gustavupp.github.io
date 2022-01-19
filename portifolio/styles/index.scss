@@ -39,3 +39,10 @@ body {
   color: var(--secondary-color);
   transition: 1s;
 }
+
+.underline {
+  width: 100px;
+  height: 2px;
+  background: var(--main-color);
+  margin-bottom: 50px;
+}

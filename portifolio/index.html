@@ -36,10 +36,10 @@
 
         <div class="list-div">
           <ul>
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#home" class="scroll-links">HOME</a></li>
+            <li><a href="#about" class="scroll-links">ABOUT</a></li>
+            <li><a href="#projects" class="scroll-links">PROJECTS</a></li>
+            <li><a href="#contact" class="scroll-links">CONTACT</a></li>
             <li>
               <a class="cv" href="./assets/CV.pdf" download>
                 <i class="fas fa-file-download"></i> CV
@@ -144,6 +144,7 @@
     <!------------------------------ABOUT------------------------------------>
     <section id="about">
       <h1>WHO <span>AM I?</span></h1>
+      <div class="underline"></div>
       <div class="about-wrapper">
         <!--ABOUT PHOTO-->
         <div class="about-photo-container">
@@ -171,44 +172,78 @@
 
     <!------------------------------PROJECTS------------------------------------>
     <section id="projects">
-      <h1 style="margin-bottom: 20px">MY<span> PROJECTS</span></h1>
+      <h1>MY<span> PROJECTS</span></h1>
+      <div class="underline"></div>
       <div class="project-wrapper">
         <!-----------INDIVIDUAL PROJECTS------------>
         <div class="individual-project">
-          <img src="./assets/ecommerce.png" alt="ecommerce" />
+          <a href="https://asilecommerce.netlify.app/" target="_blank"
+            ><img src="./assets/ecommerce.png" alt="ecommerce"
+          /></a>
           <div class="project-info">
             <h2>Asil eCommerce</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
-              voluptatem adipisci pariatur odit cum velit ipsam non qui id!
-              Laudantium magni expedita accusantium iure pariatur.
+              <span>Created Using:</span> React JS, React's Context API,
+              CommerceJs, JavaScript ES6+, Responsive design, SASS, CSS3 and
+              HTML5
             </p>
+
+            <div class="technologies-container">
+              <ul class="technologies">
+                <li><i class="fab fa-react"></i></li>
+                <li><i class="fab fa-sass"></i></li>
+
+                <li><i class="fab fa-js-square"></i></li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <!-----------INDIVIDUAL PROJECTS------------>
         <div class="individual-project odd">
-          <img src="./assets/bookshelf.png" alt="bookshekf" />
+          <a
+            href="https://gustavupp.github.io/book-lookUp/index.html"
+            target="_blank"
+            ><img src="./assets/bookshelf.png" alt="bookshekf"
+          /></a>
           <div class="project-info">
-            <h2>My Bookshelf</h2>
+            <h2>My Bookshelf Web App</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
-              voluptatem adipisci pariatur odit cum velit ipsam non qui id!
-              Laudantium magni expedita accusantium iure pariatur.
+              <span>Created Using:</span> Vanilla JavaScript, AJAX, JavaScript
+              ES6+, Responsive design, CSS3 and HTML5
             </p>
+
+            <div class="technologies-container">
+              <ul class="technologies">
+                <li><i class="fab fa-html5"></i></li>
+                <li><i class="fab fa-css3-alt"></i></li>
+                <li><i class="fab fa-js-square"></i></li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <!-----------INDIVIDUAL PROJECTS------------>
         <div class="individual-project">
-          <img src="./assets/vizzeto.png" alt="pizzeria" />
+          <a
+            href="https://gustavupp.github.io/vizzeto/index.html"
+            target="_blank"
+            ><img src="./assets/vizzeto.png" alt="pizzeria"
+          /></a>
           <div class="project-info">
-            <h2>Vizzeto Woodfire</h2>
+            <h2>Vizzeto Woodfire Website</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt,
-              voluptatem adipisci pariatur odit cum velit ipsam non qui id!
-              Laudantium magni expedita accusantium iure pariatur.
+              <span>Created Using:</span> HTML5, CSS3, a pinch of Vanilla
+              JavaScript and Responsive design
             </p>
+
+            <div class="technologies-container">
+              <ul class="technologies">
+                <li><i class="fab fa-html5"></i></li>
+                <li><i class="fab fa-css3-alt"></i></li>
+                <li><i class="fab fa-js-square"></i></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -216,23 +251,27 @@
 
     <!------------------------------CONTACT------------------------------------>
     <section id="contact">
-      <h1 style="margin-bottom: 20px">CONTACT<span> ME</span></h1>
+      <h1>CONTACT<span> ME</span></h1>
+      <div class="underline"></div>
       <div class="contact-wrapper">
         <p>
           Thanks for taking the time to reach out. How can I help you today?
         </p>
-        <form>
+        <form
+          action="https://formsubmit.co/xgustavux@hotmail.com"
+          method="POST"
+        >
           <div>
-            <input placeholder="Name" type="text" />
+            <input name="name" placeholder="Name" type="text" />
           </div>
           <div>
-            <input placeholder="Email" type="email" />
+            <input name="email" placeholder="Email" type="email" />
           </div>
           <div>
-            <input placeholder="Subject" type="text" />
+            <input name="subject" placeholder="Subject" type="text" />
           </div>
           <div>
-            <textarea placeholder="Message"></textarea>
+            <textarea name="message" placeholder="Message"></textarea>
           </div>
           <button type="submit">SEND MESSAGE</button>
         </form>

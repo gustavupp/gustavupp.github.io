@@ -59,18 +59,6 @@ sidebarUl.forEach((li) =>
 const date = (document.getElementById('date').innerHTML =
   new Date().getFullYear())
 
-//make navbar fixed after scrolling down the height of navbar
-window.addEventListener('scroll', () => {
-  const home = document.getElementById('home')
-  const homeHeight = home.getBoundingClientRect().height
-
-  if (window.pageYOffset > homeHeight / 2) {
-    navbar.classList.add('fixed')
-  } else {
-    navbar.classList.remove('fixed')
-  }
-})
-
 //get position of TAGS when navbar fixed navbar
 const scrollLinks = document.querySelectorAll('.scroll-links')
 
