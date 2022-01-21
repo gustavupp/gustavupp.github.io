@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   .about-wrapper {
     display: flex;
@@ -44,6 +43,10 @@
     .about-content {
       text-align: justify;
       max-width: 550px;
+
+      // p {
+      //   line-height: 1.7;
+      // }
     }
   }
 
