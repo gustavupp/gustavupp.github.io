@@ -1,8 +1,8 @@
 {
-  "name": "TODO",
+  "name": "TODO PWA",
   "short_name": "TODO",
-  "start_url": "/?home=true",
-  "id": "/?home=true",
+  "start_url": ".",
+  "id": ".",
   "icons": [
     {
       "src": "icons/manifest-icon-192.maskable.png",
