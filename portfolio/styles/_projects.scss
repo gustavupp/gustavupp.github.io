@@ -17,6 +17,7 @@
         cursor: pointer;
         width: 100%;
         max-width: 400px;
+        max-height: 500px;
         border-radius: 8px;
         box-shadow: 2px 2px 8px rgb(26, 26, 26);
         margin-top: 20px;
@@ -37,13 +38,48 @@
         .technologies-container {
           display: flex;
           justify-content: left;
+          align-items: center;
           margin-top: 25px;
 
           .technologies {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             li {
               display: inline-block;
-              font-size: 40px;
+              font-size: 50px;
               margin: 0 20px;
+
+              .icon-with-p {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+
+                p {
+                  font-size: 16px;
+                }
+              }
+
+              .redux-img {
+                box-shadow: none;
+                background: transparent;
+                height: 60px;
+                width: 60px;
+              }
+            }
+
+            .redux {
+              background-color: transparent;
+              border-radius: 0;
+            }
+
+            img {
+              width: 47px;
+              background: white;
+              padding: 3px;
             }
           }
         }
@@ -74,7 +110,7 @@
         gap: 60px;
       }
 
-      .odd {
+      .even {
         flex-direction: row-reverse;
       }
     }

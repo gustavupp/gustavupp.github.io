@@ -576,6 +576,7 @@ span {
   cursor: pointer;
   width: 100%;
   max-width: 400px;
+  max-height: 500px;
   border-radius: 8px;
   -webkit-box-shadow: 2px 2px 8px #1a1a1a;
           box-shadow: 2px 2px 8px #1a1a1a;
@@ -604,13 +605,68 @@ span {
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 25px;
+}
+
+#projects .project-wrapper .individual-project .project-info .technologies-container .technologies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 #projects .project-wrapper .individual-project .project-info .technologies-container .technologies li {
   display: inline-block;
-  font-size: 40px;
+  font-size: 50px;
   margin: 0 20px;
+}
+
+#projects .project-wrapper .individual-project .project-info .technologies-container .technologies li .icon-with-p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+}
+
+#projects .project-wrapper .individual-project .project-info .technologies-container .technologies li .icon-with-p p {
+  font-size: 16px;
+}
+
+#projects .project-wrapper .individual-project .project-info .technologies-container .technologies li .redux-img {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: transparent;
+  height: 60px;
+  width: 60px;
+}
+
+#projects .project-wrapper .individual-project .project-info .technologies-container .technologies .redux {
+  background-color: transparent;
+  border-radius: 0;
+}
+
+#projects .project-wrapper .individual-project .project-info .technologies-container .technologies img {
+  width: 47px;
+  background: white;
+  padding: 3px;
 }
 
 #projects .project-wrapper .individual-project .project-info .project-btns {
@@ -643,7 +699,7 @@ span {
             flex-direction: row;
     gap: 60px;
   }
-  #projects .project-wrapper .odd {
+  #projects .project-wrapper .even {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
