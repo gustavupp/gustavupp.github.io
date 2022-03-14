@@ -11,7 +11,7 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 100px;
-      gap: 30px;
+      gap: 40px;
 
       img {
         cursor: pointer;
@@ -49,7 +49,7 @@
             li {
               display: inline-block;
               font-size: 50px;
-              margin: 0 20px;
+              margin: 0 15px;
 
               .icon-with-p {
                 display: flex;
@@ -107,7 +107,7 @@
     @media screen and (min-width: 996px) {
       .individual-project {
         flex-direction: row;
-        gap: 60px;
+        gap: 70px;
       }
 
       .even {

@@ -569,7 +569,7 @@ span {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 100px;
-  gap: 30px;
+  gap: 40px;
 }
 
 #projects .project-wrapper .individual-project img {
@@ -626,7 +626,7 @@ span {
 #projects .project-wrapper .individual-project .project-info .technologies-container .technologies li {
   display: inline-block;
   font-size: 50px;
-  margin: 0 20px;
+  margin: 0 15px;
 }
 
 #projects .project-wrapper .individual-project .project-info .technologies-container .technologies li .icon-with-p {
@@ -697,7 +697,7 @@ span {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    gap: 60px;
+    gap: 70px;
   }
   #projects .project-wrapper .even {
     -webkit-box-orient: horizontal;
