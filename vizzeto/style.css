@@ -52,10 +52,15 @@ section {
 }
 
 /*-------BEGINS HEADER--------*/
-header {
+.header {
   height: 100vh;
   width: 100vw;
-  background-image: url('./images/background_image.png');
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 70%,
+      rgba(39, 53, 62, 1)
+    ),
+    url('./images/background_image.png');
   background-size: cover;
 }
 
