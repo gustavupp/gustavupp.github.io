@@ -57,8 +57,8 @@ section {
   width: 100vw;
   background-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0) 70%,
-      rgba(39, 53, 62, 1)
+      rgba(0, 0, 0, 0) 80%,
+      var(--lessDarkBlue)
     ),
     url('./images/background_image.png');
   background-size: cover;
@@ -176,7 +176,7 @@ li a {
 
 #about {
   display: flex;
-  background-color: var(--Darkblue);
+  background-color: var(--lessDarkBlue);
   color: var(--notSoWhite);
   align-items: center;
   flex-direction: column;
@@ -254,12 +254,13 @@ span {
 /*************CONTACT**************/
 
 #contact {
-  background-color: var(--notSoWhite);
+  background-color: var(--lessDarkBlue);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  color: var(--notSoWhite);
 }
 
 .contact-container {
@@ -282,6 +283,12 @@ textarea {
   min-width: 50px;
   border-radius: 7px;
   border: 1px solid rgba(128, 128, 128, 0.3);
+  background-color: var(--LightBlue);
+  color: var(--notSoWhite);
+}
+
+::placeholder {
+  color: var(--notSoWhite);
 }
 
 textarea {
@@ -289,7 +296,6 @@ textarea {
 }
 
 .maps-container {
-  border: 1px solid rgba(128, 128, 128, 0.3);
   border-radius: 10px;
   padding: 0;
   margin: 0;
