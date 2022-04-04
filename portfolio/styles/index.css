@@ -629,7 +629,15 @@ span {
   margin: 0 15px;
 }
 
-#projects .project-wrapper .individual-project .project-info .technologies-container .technologies li .icon-with-p {
+#projects .project-wrapper .individual-project .project-info .redux-img {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: transparent;
+  height: 60px;
+  width: 60px;
+}
+
+#projects .project-wrapper .individual-project .project-info .icon-with-p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -646,27 +654,8 @@ span {
   height: 50px;
 }
 
-#projects .project-wrapper .individual-project .project-info .technologies-container .technologies li .icon-with-p p {
+#projects .project-wrapper .individual-project .project-info .icon-with-p p {
   font-size: 16px;
-}
-
-#projects .project-wrapper .individual-project .project-info .technologies-container .technologies li .redux-img {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  background: transparent;
-  height: 60px;
-  width: 60px;
-}
-
-#projects .project-wrapper .individual-project .project-info .technologies-container .technologies .redux {
-  background-color: transparent;
-  border-radius: 0;
-}
-
-#projects .project-wrapper .individual-project .project-info .technologies-container .technologies img {
-  width: 47px;
-  background: white;
-  padding: 3px;
 }
 
 #projects .project-wrapper .individual-project .project-info .project-btns {
