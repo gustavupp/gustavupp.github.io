@@ -3,14 +3,31 @@ const modeIcon = document.getElementById('mode')
 const switchMode = document.getElementById('switch')
 const innerText = document.getElementById('inner-text')
 
+//saves selection to localStorage
+window.addEventListener('DOMContentLoaded', function () {
+  let theme = localStorage.getItem('theme')
+    ? localStorage.getItem('theme')
+    : null
+
+  if (theme) {
+    document.body.classList.toggle('light-mode')
+    switchMode.classList.toggle('switch-active')
+    innerText.classList.toggle('inner-text-active')
+    innerText.innerHTML = 'Dark'
+  }
+})
+
+//light mode onclick
 modeIcon.onclick = function () {
   document.body.classList.toggle('light-mode')
   switchMode.classList.toggle('switch-active')
   innerText.classList.toggle('inner-text-active')
   if (document.body.classList.contains('light-mode')) {
     innerText.innerHTML = 'Dark'
+    localStorage.setItem('theme', 'light')
   } else {
     innerText.innerHTML = 'Light'
+    localStorage.removeItem('theme')
   }
 }
 
